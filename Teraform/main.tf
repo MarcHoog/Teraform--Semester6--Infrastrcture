@@ -39,7 +39,7 @@ resource "proxmox_lxc" "basic-test" {
 
   network {
     name   = "eth0"
-    bridge = "Vnet500"
+    bridge = var.bridge
     ip     = "dhcp"
   }
 }
