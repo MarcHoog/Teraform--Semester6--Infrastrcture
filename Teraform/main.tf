@@ -23,7 +23,7 @@ provider "proxmox" {
 } 
 
 resource "proxmox_lxc" "basic-test" {
-  target_node  = "192.168.1.252:8006"
+  target_node  = "ve-hp"
   hostname     = "basic-test1"
   ostemplate   = "local:vztmpl/ubuntu-20.04-standard_20.04-1_amd64.tar.gz"
   password     = "BasicLXCContainer"
