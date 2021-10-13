@@ -28,7 +28,7 @@ resource "proxmox_lxc" "basic-test" {
 
 
   target_node  = "ve-hp"
-  hostname     = name
+  hostname     = "${name}"
   ostemplate   = "local:vztmpl/ubuntu-21.04-standard_21.04-1_amd64.tar.gz"
   password     = "BasicLXCContainer"
   unprivileged = true
