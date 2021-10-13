@@ -10,7 +10,7 @@ variable "computer_name" {
 
   validation {
       condition = length(var.computer_name) > 0
-      error_message = "atleast fill in one computer name"
+      error_message = "Atleast fill in one computer name."
   } 
 }
 
@@ -19,19 +19,19 @@ variable "networking_bridge" {
     type            = string
 
     validation {
-        condition       = tostring(var.bridge) == "Vnet500"
+        condition       = tostring(var.networking_bridge) == "Vnet500"
         error_message   = "The bridge value must be a valid bridge, check proxmox for more information."
     }
 }
 
 variable "networking_mtu" {
-  description = "What MTU will be used for the configured container"
+  description = "What MTU will be used for the configured container."
   type        = number
   default     = 1500
 }
 
 variable "networking_ip" {
-    description = "What address will be used for this machine IP or DHCP"
+    description = "What address will be used for this machine IP or DHCP."
     type        = string
     default     = "dhcp"
 }
