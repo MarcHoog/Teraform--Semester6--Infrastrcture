@@ -26,8 +26,8 @@ variable "networking_bridge" {
 
 variable "networking_mtu" {
   description = "What MTU will be used for the configured container."
-  type        = number
-  default     = 1500
+  type        = string
+  default     = "1500"
 }
 
 variable "networking_ip" {
