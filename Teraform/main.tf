@@ -16,19 +16,20 @@ provider "proxmox" {
     pm_api_token_id ="teraform-test@pve!new_token_id"
 
     # is just local so i don't care much atm but this isn't safe
-    pm_api_token_secret =  "a70d8aaa-d615-4eaa-acfb-88e59be062b4"
+    pm_api_token_secret =  var.token_secret
 
     # NO SSL
     pm_tls_insecure = true
 } 
 
 resource "proxmox_lxc" "basic-test" {
-  count = length(var.computer_names)
+  count = length(var.computer_name)
 
   target_node  = "ve-hp"
-  hostname     = var.computer_names[count.index]
+  hostname     = var.computer_name[count.index]
   ostemplate   = "local:vztmpl/ubuntu-21.04-standard_21.04-1_amd64.tar.gz"
-  password     = "BasicLXCContainer"
+  password     = "BasicLXCContainer0"
+  ostype       = "ubuntu"
   unprivileged = true
 
   // Terraform will crash without rootfs defined
@@ -38,8 +39,9 @@ resource "proxmox_lxc" "basic-test" {
   }
 
   network {
-    name   = "eth0"
-    bridge = var.bridge
-    ip     = "dhcp"
+    name    = "eth0"
+    bridge  = var.networking_bridge
+    mtu     = var.networking_mtu
+    ip      = var.networking_ip
   }
 }
