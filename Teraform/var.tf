@@ -45,11 +45,7 @@ variable "disksize" {
 variable "bridge" {
     description     = "Value of what Vbridge device will be used for connection."
     type            = string
-
-    validation {
-        condition       = tostring(var.bridge) == "Vnet500"
-        error_message   = "The bridge value must be a valid bridge, check proxmox for more information."
-    }
+    default         = "vmbr99"
 }
 
 
@@ -62,4 +58,11 @@ variable "ip" {
     description = "What address will be used for this machine IP or DHCP."
     type        = string
     default     = "dhcp"
+}
+
+variable "vlan" {
+    description = "Vlan tag for proxmox."
+    type        = number
+    default     =   50 
+  
 }

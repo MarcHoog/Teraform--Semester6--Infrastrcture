@@ -43,5 +43,7 @@ resource "proxmox_lxc" "basic-test" {
     name = "eth0"
     bridge  = var.bridge
     ip      = var.ip
+    tag     = var.vlan
+
   }
 }
