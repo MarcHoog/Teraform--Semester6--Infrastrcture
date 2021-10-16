@@ -16,6 +16,12 @@ variable "computer_name" {
   } 
 }
 
+variable "description" {
+    description = "Description of the container"
+    type        = string 
+  
+}
+
 
 variable "root_password" {
     description = "The root password."
@@ -56,20 +62,27 @@ variable "bridge" {
 }
 
 
-#variable "mtu" {
-#  description = "What MTU will be used for the configured container."
-#  type        = string
-#}
+variable "mtu" {
+    type        = string
+    default     = "1500"
+    description = "What MTU will be used for the configured container."
+
+}
 
 variable "ip" {
-    description = "What address will be used for this machine IP or DHCP."
     type        = string
+    description = "What address will be used for this machine IP or DHCP."
     default     = "dhcp"
 }
+
+variable "gw" {
+    type        = string
+    description = "What gateway will the machine use"
+}
+
 
 variable "vlan" {
     description = "Vlan tag for proxmox."
     type        = number
-    default     =   50 
-  
+    default     =   50   
 }

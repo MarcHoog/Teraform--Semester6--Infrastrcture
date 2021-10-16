@@ -24,17 +24,26 @@ provider "proxmox" {
 
 resource "proxmox_lxc" "basic-test" {
   count = length(var.computer_name)
-
+  
   target_node  = "ve-hp"
-  hostname     = var.computer_name[count.index]
+  
   ostemplate   = "local:vztmpl/ubuntu-21.04-standard_21.04-1_amd64.tar.gz"
-  password     = var.root_password
+  description = var.description
   ostype       = "ubuntu"
+  
+
+  hostname      = var.computer_name[count.index]
+  nameserver    = "8.8.8.8"
+
+  password     = var.root_password
+
   unprivileged = true
   start = true
 
   cores = var.cpu_cores
   memory = var.memory
+
+
 
   // Terraform will crash without rootfs defined
   rootfs {
@@ -47,6 +56,7 @@ resource "proxmox_lxc" "basic-test" {
     bridge  = var.bridge
     ip      = var.ip
     tag     = var.vlan
+    gw      = var.gw
 
   }
 }
