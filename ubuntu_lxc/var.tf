@@ -3,11 +3,7 @@ variable "token_secret" {
     type        = string
 }
 
-
-
-##################
-# Host Variables #
-##################
+## Host Variables ##
 
 
 variable "computer_name" {
@@ -27,9 +23,22 @@ variable "root_password" {
   
 }
 
-##################
-# Disk Variables #
-##################
+## Hardware ##
+
+variable "cpu_cores" {
+    description = "Amount of CPU cores the node will have."
+    type = number
+  
+}
+
+variable "memory" {
+    description = "Amount of memory the node will have in MB."
+    type = number
+  
+}
+
+
+## Disk Variables ##
 
 variable "disksize" {
     description = "Value of the size of the disk in 'G' Gigabite"
@@ -38,9 +47,7 @@ variable "disksize" {
 
 
 
-########################
-# Networking Variables #
-########################
+## Networking Variables ##
 
 variable "bridge" {
     description     = "Value of what Vbridge device will be used for connection."

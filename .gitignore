@@ -1,5 +1,5 @@
-Teraform/.terraform.lock.hcl
-Teraform/.terraform/providers/registry.terraform.io/telmate/proxmox/2.8.0/linux_amd64/README.md
-Teraform/.terraform/providers/registry.terraform.io/telmate/proxmox/2.8.0/linux_amd64/LICENSE
-Teraform/.terraform/providers/registry.terraform.io/telmate/proxmox/2.8.0/linux_amd64/terraform-provider-proxmox_v2.8.0
-Teraform/terraform.tfstate
+ubuntu_lxc/.terraform.lock.hcl
+ubuntu_lxc/.terraform/providers/registry.terraform.io/telmate/proxmox/2.8.0/linux_amd64/README.md
+ubuntu_lxc/.terraform/providers/registry.terraform.io/telmate/proxmox/2.8.0/linux_amd64/LICENSE
+ubuntu_lxc/.terraform/providers/registry.terraform.io/telmate/proxmox/2.8.0/linux_amd64/terraform-provider-proxmox_v2.8.0
+ubuntu_lxc/terraform.tfstate

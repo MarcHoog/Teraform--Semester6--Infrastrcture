@@ -33,6 +33,9 @@ resource "proxmox_lxc" "basic-test" {
   unprivileged = true
   start = true
 
+  cores = var.cpu_cores
+  memory = var.memory
+
   // Terraform will crash without rootfs defined
   rootfs {
     storage = "local-lvm"
