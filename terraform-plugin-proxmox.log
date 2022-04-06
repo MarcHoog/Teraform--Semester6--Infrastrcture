@@ -4232,3 +4232,1073 @@ Server: pve-api-daemon/3.0
 [90mThu, 07 Apr 2022 01:18:57 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1515[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr120 id:0 macaddr:52:E1:27:70:CF:D7 model:virtio tag:-1]]' from '[map[bridge:vmbr120 macaddr:52:E1:27:70:CF:D7 model:virtio tag:-1]]' set as '[map[bridge:vmbr120 firewall:false link_down:false macaddr:52:E1:27:70:CF:D7 model:virtio mtu:0 queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
 [90mThu, 07 Apr 2022 01:18:57 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1517[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":0,"agent":1,"args":"","automatic_reboot":true,"balloon":0,"bios":"seabios","boot":"c","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"ansible-op","clone":"","clone_wait":0,"cloudinit_cdrom_storage":"","cores":1,"cpu":"host","default_ipv4_address":"10.0.0.200","define_connection_info":true,"desc":"","disk":[{"aio":"","backup":0,"cache":"none","discard":"","file":"vm-102-disk-0","format":"","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"32972M","slot":0,"ssd":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-102-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":false,"guest_agent_ready_timeout":100,"hagroup":"","hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=10.0.0.200/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","iso":"","kvm":true,"mac":"","memory":2048,"name":"test-vm","nameserver":"10.0.0.254","network":[{"bridge":"vmbr120","firewall":false,"link_down":false,"macaddr":"C6:AD:1E:CE:31:3A","model":"virtio","mtu":0,"queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":false,"oncreate":true,"os_network_config":"","os_type":"","pool":"","preprovision":true,"pxe":false,"qemu_os":"l26","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"newearth.local","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"10.0.0.200","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server\n\n\n\n\n\n\n\n\n\n\n\n\n","storage":"","storage_type":"","tablet":true,"tags":"","target_node":"ml350p","unused_disk":[],"usb":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":0}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
 [90mThu, 07 Apr 2022 01:18:57 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1517[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":0,"agent":1,"args":"","automatic_reboot":true,"balloon":0,"bios":"seabios","boot":"c","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"root","clone":"","clone_wait":0,"cloudinit_cdrom_storage":"","cores":4,"cpu":"host","default_ipv4_address":"10.0.0.1","define_connection_info":true,"desc":"","disk":[{"aio":"","backup":0,"cache":"none","discard":"","file":"vm-101-disk-0","format":"","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"32972M","slot":0,"ssd":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-101-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":false,"guest_agent_ready_timeout":100,"hagroup":"","hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","iso":"","kvm":true,"mac":"","memory":4096,"name":"ansible","nameserver":"10.0.0.254","network":[{"bridge":"vmbr120","firewall":false,"link_down":false,"macaddr":"52:E1:27:70:CF:D7","model":"virtio","mtu":0,"queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":false,"oncreate":true,"os_network_config":"","os_type":"","pool":"","preprovision":true,"pxe":false,"qemu_os":"l26","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"newearth.local","serial":[],"sockets":2,"ssh_forward_ip":"","ssh_host":"10.0.0.1","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ/NNo+Pk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4+WmCSQ7XYlYw+Z6yV8sZu6ox1SoIYp/zvAbiMRqhKavj+mJ6i/wAx44sPeSxW/+/+Bl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC+6fjSbl/2fsyXjPPpBuGZ9wGDIWbLr/AHldulkOU+mmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1+UtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws+Er2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf/IERuq9iEgTufHL7pWvKR34k+h+LjVL+KrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr+FjnPkyfG5GrE= marchoogendoorn@AHoogendoorn\n\n\n","storage":"","storage_type":"","tablet":true,"tags":"","target_node":"ml350p","unused_disk":[],"usb":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":0}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:21:34 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:155[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mThu, 07 Apr 2022 01:21:34 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:188[0m[36m >[0m Logging Started. Root Logger Set to level debug
+[90mThu, 07 Apr 2022 01:21:34 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1319[0m[36m >[0m Reading configuration for vmid [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:21:34 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1319[0m[36m >[0m Reading configuration for vmid [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+2022/04/07 01:21:34 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:34 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:34 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1178
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:35 GMT
+Expires: Wed, 06 Apr 2022 23:21:35 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"mem":869069481,"netout":7333188661,"vmid":100,"node":"ml350p","diskread":806958524,"netin":12509366432,"template":0,"id":"qemu/100","maxmem":2147483648,"diskwrite":71508369408,"status":"running","disk":0,"name":"pfsense","type":"qemu","maxdisk":34359738368,"uptime":3413631,"maxcpu":8,"cpu":0.00661737788983411},{"disk":0,"name":"ansible","status":"running","maxdisk":34573647872,"type":"qemu","uptime":11770,"cpu":0.00428904122489248,"maxcpu":8,"mem":873652224,"netout":6845543,"node":"ml350p","diskread":473226012,"template":0,"netin":504533,"vmid":101,"id":"qemu/101","diskwrite":284733440,"maxmem":4294967296},{"maxdisk":34573647872,"type":"qemu","uptime":19196,"cpu":0.0343123297991398,"maxcpu":1,"name":"test-vm","disk":0,"status":"running","netin":12558599,"template":0,"node":"ml350p","diskread":558783260,"vmid":102,"maxmem":2147483648,"diskwrite":684146688,"id":"qemu/102","netout":726531,"mem":909991936},{"disk":0,"status":"stopped","name":"ubuntu2004","uptime":0,"maxdisk":34573647872,"type":"qemu","maxcpu":1,"cpu":0,"mem":0,"netout":0,"vmid":9000,"diskread":0,"node":"ml350p","template":1,"netin":0,"id":"qemu/9000","diskwrite":0,"maxmem":2147483648}]}
+2022/04/07 01:21:34 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1178
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:35 GMT
+Expires: Wed, 06 Apr 2022 23:21:35 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"maxcpu":8,"cpu":0.00661737788983411,"type":"qemu","maxdisk":34359738368,"uptime":3413631,"name":"pfsense","disk":0,"status":"running","id":"qemu/100","maxmem":2147483648,"diskwrite":71508369408,"vmid":100,"diskread":806958524,"node":"ml350p","netin":12509366432,"template":0,"mem":869069481,"netout":7333188661},{"disk":0,"status":"running","name":"ansible","cpu":0.00428904122489248,"maxcpu":8,"uptime":11770,"maxdisk":34573647872,"type":"qemu","mem":873652224,"netout":6845543,"id":"qemu/101","diskwrite":284733440,"maxmem":4294967296,"node":"ml350p","diskread":473226012,"template":0,"netin":504533,"vmid":101},{"id":"qemu/102","maxmem":2147483648,"diskwrite":684146688,"node":"ml350p","diskread":558783260,"netin":12558599,"template":0,"vmid":102,"netout":726531,"mem":909991936,"cpu":0.0343123297991398,"maxcpu":1,"maxdisk":34573647872,"type":"qemu","uptime":19196,"disk":0,"status":"running","name":"test-vm"},{"name":"ubuntu2004","disk":0,"status":"stopped","cpu":0,"maxcpu":1,"type":"qemu","maxdisk":34573647872,"uptime":0,"mem":0,"netout":0,"maxmem":2147483648,"diskwrite":0,"id":"qemu/9000","netin":0,"template":1,"diskread":0,"node":"ml350p","vmid":9000}]}
+2022/04/07 01:21:34 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/102/config HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:34 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/config HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:34 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1406
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:35 GMT
+Expires: Wed, 06 Apr 2022 23:21:35 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"numa":0,"boot":"c","sshkeys":"ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ%2FNNo%2BPk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4%2BWmCSQ7XYlYw%2BZ6yV8sZu6ox1SoIYp%2FzvAbiMRqhKavj%2BmJ6i%2FwAx44sPeSxW%2F%2B%2F%2BBl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC%2B6fjSbl%2F2fsyXjPPpBuGZ9wGDIWbLr%2FAHldulkOU%2BmmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1%2BUtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws%2BEr2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf%2FIERuq9iEgTufHL7pWvKR34k%2Bh%2BLjVL%2BKrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr%2BFjnPkyfG5GrE%3D%20marchoogendoorn%40AHoogendoorn%0A%0A%0A","nameserver":"10.0.0.254","cpu":"host","ide2":"local-lvm:vm-101-cloudinit,media=cdrom","meta":"creation-qemu=6.1.0,ctime=1645701492","cipassword":"**********","cores":4,"vmgenid":"82328727-1755-465e-8e94-92a7c93db9de","smbios1":"uuid=4721c9e9-0bc8-465d-8366-63c91b0c2057","scsi0":"local-lvm:vm-101-disk-0,size=32972M","name":"ansible","memory":4096,"hotplug":"network,disk,usb","net0":"virtio=52:E1:27:70:CF:D7,bridge=vmbr120","ostype":"l26","agent":"1","ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","sockets":2,"kvm":1,"searchdomain":"newearth.local","onboot":0,"bios":"seabios","ciuser":"root","digest":"195d41555a017928b36291e1d88e62fc31aa6bbc","serial0":"socket","scsihw":"virtio-scsi-pci","tablet":1,"bootdisk":"scsi0"}}
+2022/04/07 01:21:34 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/content HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:34 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 949
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:35 GMT
+Expires: Wed, 06 Apr 2022 23:21:35 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"boot":"c","numa":0,"meta":"creation-qemu=6.1.0,ctime=1645701492","nameserver":"10.0.0.254","ide2":"local-lvm:vm-102-cloudinit,media=cdrom,size=4M","cpu":"host","sshkeys":"ssh-ed25519%20AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV%20ansible-op%40ansible-server%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A","parent":"hehehe","cores":1,"cipassword":"**********","vmgenid":"5091cf9a-950b-46ce-bc1b-b498ab2f9ed1","name":"test-vm","scsi0":"local-lvm:vm-102-disk-0,size=32972M","smbios1":"uuid=80b1d186-0af0-4a19-affd-53af7938ca95","searchdomain":"newearth.local","kvm":1,"ipconfig0":"ip=10.0.0.200/24,gw=10.0.0.254","sockets":1,"agent":"1","net0":"virtio=C6:AD:1E:CE:31:3A,bridge=vmbr120","ostype":"l26","hotplug":"network,disk,usb","memory":2048,"bios":"seabios","onboot":0,"bootdisk":"scsi0","tablet":1,"scsihw":"virtio-scsi-pci","serial0":"socket","digest":"304e49c31e687ae8d3713101fa961ec78e3c2092","ciuser":"ansible-op"}}
+2022/04/07 01:21:34 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/content HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:35 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:35 GMT
+Expires: Wed, 06 Apr 2022 23:21:35 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+2022/04/07 01:21:35 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:35 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:35 GMT
+Expires: Wed, 06 Apr 2022 23:21:35 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+2022/04/07 01:21:35 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:35 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 149
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:36 GMT
+Expires: Wed, 06 Apr 2022 23:21:36 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"lvmthin","avail":346921298717,"enabled":1,"active":1,"shared":0,"used":16385119459,"total":363306418176,"content":"rootdir,images"}}
+2022/04/07 01:21:35 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/102/status/current HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:35 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 149
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:36 GMT
+Expires: Wed, 06 Apr 2022 23:21:36 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"enabled":1,"active":1,"shared":0,"type":"lvmthin","avail":346921298717,"total":363306418176,"content":"rootdir,images","used":16385119459}}
+2022/04/07 01:21:35 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/status/current HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:35 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 2207
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:36 GMT
+Expires: Wed, 06 Apr 2022 23:21:36 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"maxdisk":34573647872,"diskwrite":684146688,"status":"running","agent":1,"proxmox-support":{"query-bitmap-info":true,"pbs-dirty-bitmap-migration":true,"pbs-masterkey":true,"pbs-library-version":"1.2.0 (6e555bc73a7dcfb4d0b47355b958afd101ad27b5)","pbs-dirty-bitmap-savevm":true,"pbs-dirty-bitmap":true},"cpus":1,"qmpstatus":"running","vmid":102,"diskread":558783260,"netin":12558599,"running-machine":"pc-i440fx-6.1+pve0","balloon":2147483648,"running-qemu":"6.1.0","freemem":1169629184,"blockstat":{"scsi0":{"invalid_rd_operations":0,"wr_highest_offset":15296184320,"rd_bytes":558438912,"rd_merged":0,"failed_flush_operations":0,"unmap_operations":0,"rd_operations":12988,"invalid_flush_operations":0,"wr_merged":0,"wr_operations":7209,"account_failed":true,"unmap_bytes":0,"unmap_total_time_ns":0,"wr_bytes":684146688,"invalid_wr_operations":0,"failed_rd_operations":0,"invalid_unmap_operations":0,"wr_total_time_ns":97832403145,"unmap_merged":0,"flush_total_time_ns":695156996,"failed_wr_operations":0,"idle_time_ns":207427173829,"account_invalid":true,"timed_stats":[],"rd_total_time_ns":17809096449,"failed_unmap_operations":0,"flush_operations":921},"ide2":{"rd_bytes":344348,"invalid_rd_operations":0,"wr_highest_offset":0,"invalid_flush_operations":0,"failed_flush_operations":0,"unmap_operations":0,"rd_operations":98,"rd_merged":0,"account_failed":true,"wr_operations":0,"unmap_bytes":0,"wr_merged":0,"invalid_wr_operations":0,"failed_rd_operations":0,"unmap_total_time_ns":0,"wr_bytes":0,"unmap_merged":0,"wr_total_time_ns":0,"invalid_unmap_operations":0,"failed_wr_operations":0,"flush_total_time_ns":0,"timed_stats":[],"account_invalid":true,"idle_time_ns":19190126143249,"failed_unmap_operations":0,"flush_operations":0,"rd_total_time_ns":6411654}},"nics":{"tap102i0":{"netin":12558599,"netout":726531}},"mem":909991936,"maxmem":2147483648,"disk":0,"ballooninfo":{"free_mem":1169629184,"mem_swapped_out":0,"max_mem":2147483648,"major_page_faults":2120,"mem_swapped_in":0,"actual":2147483648,"total_mem":2079621120,"last_update":1649287295,"minor_page_faults":3604582},"name":"test-vm","serial":1,"ha":{"managed":0},"pid":2098742,"cpu":0.0355151263287282,"uptime":19204,"netout":726531}}
+2022/04/07 01:21:35 [DEBUG] VM status: running
+[90mThu, 07 Apr 2022 01:21:35 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1348[0m[36m >[0m [READ] Received Config from Proxmox API: {"vmid":0,"name":"test-vm","desc":"","bios":"seabios","onboot":false,"tablet":true,"agent":1,"memory":2048,"balloon":0,"os":"l26","cores":1,"sockets":1,"vcpus":0,"cpu":"host","numa":false,"kvm":true,"hotplug":"network,disk,usb","iso":"local-lvm:vm-102-cloudinit","pxe":false,"fullclone":null,"boot":"c","bootdisk":"scsi0","scsihw":"virtio-scsi-pci","disk":{"0":{"file":"vm-102-disk-0","format":"","size":"32972M","slot":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-102-disk-0"}},"unused_disk":{},"network":{"0":{"bridge":"vmbr120","id":0,"macaddr":"C6:AD:1E:CE:31:3A","model":"virtio"}},"serial":{"0":{"id":0,"type":"socket"}},"tags":"","args":"","diskGB":0,"storage":"","storageType":"","nic":"","bridge":"","vlan":-1,"mac":"","ciuser":"ansible-op","cipassword":"**********","cicustom":"","searchdomain":"newearth.local","nameserver":"10.0.0.254","sshkeys":"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server\n\n\n\n\n\n\n\n\n\n\n\n\n","ipconfig0":"ip=10.0.0.200/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":""} [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+[90mThu, 07 Apr 2022 01:21:35 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1440[0m[36m >[0m Unused Disk Block Processed 'map[0:map[bridge:vmbr120 id:0 macaddr:C6:AD:1E:CE:31:3A model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+[90mThu, 07 Apr 2022 01:21:35 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1454[0m[36m >[0m Network block received 'map[0:map[bridge:vmbr120 id:0 macaddr:C6:AD:1E:CE:31:3A model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+2022/04/07 01:21:35 >>>>>>>>>> REQUEST:
+GET /api2/json/pools HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:35 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:36 GMT
+Expires: Wed, 06 Apr 2022 23:21:36 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+2022/04/07 01:21:35 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 2187
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:36 GMT
+Expires: Wed, 06 Apr 2022 23:21:36 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2132645,"ha":{"managed":0},"serial":1,"uptime":11777,"netout":6845543,"cpu":0,"nics":{"tap101i0":{"netin":504533,"netout":6845543}},"maxmem":4294967296,"mem":873652224,"name":"ansible","disk":0,"ballooninfo":{"mem_swapped_in":0,"major_page_faults":2071,"max_mem":4294967296,"mem_swapped_out":0,"free_mem":3247513600,"minor_page_faults":2379670,"last_update":1649287295,"total_mem":4121165824,"actual":4294967296},"running-machine":"pc-i440fx-6.1+pve0","running-qemu":"6.1.0","balloon":4294967296,"blockstat":{"ide2":{"account_invalid":true,"timed_stats":[],"idle_time_ns":11766134835036,"rd_total_time_ns":8427279,"failed_unmap_operations":0,"flush_operations":0,"wr_total_time_ns":0,"unmap_merged":0,"invalid_unmap_operations":0,"failed_wr_operations":0,"flush_total_time_ns":0,"wr_merged":0,"unmap_bytes":0,"account_failed":true,"wr_operations":0,"wr_bytes":0,"unmap_total_time_ns":0,"invalid_wr_operations":0,"failed_rd_operations":0,"rd_bytes":344348,"invalid_rd_operations":0,"wr_highest_offset":0,"invalid_flush_operations":0,"rd_merged":0,"failed_flush_operations":0,"unmap_operations":0,"rd_operations":98},"scsi0":{"wr_operations":3701,"unmap_bytes":0,"account_failed":true,"wr_merged":0,"invalid_wr_operations":0,"failed_rd_operations":0,"wr_bytes":284733440,"unmap_total_time_ns":0,"rd_bytes":472881664,"invalid_rd_operations":0,"wr_highest_offset":19445854208,"invalid_flush_operations":0,"failed_flush_operations":0,"unmap_operations":0,"rd_operations":12937,"rd_merged":0,"timed_stats":[],"account_invalid":true,"idle_time_ns":66742154984,"failed_unmap_operations":0,"flush_operations":235,"rd_total_time_ns":28690775938,"unmap_merged":0,"wr_total_time_ns":54368479440,"invalid_unmap_operations":0,"failed_wr_operations":0,"flush_total_time_ns":379722887}},"freemem":3247513600,"diskwrite":284733440,"maxdisk":34573647872,"diskread":473226012,"netin":504533,"cpus":8,"proxmox-support":{"pbs-dirty-bitmap-migration":true,"query-bitmap-info":true,"pbs-dirty-bitmap-savevm":true,"pbs-library-version":"1.2.0 (6e555bc73a7dcfb4d0b47355b958afd101ad27b5)","pbs-dirty-bitmap":true,"pbs-masterkey":true},"agent":1,"status":"running","vmid":101,"qmpstatus":"running"}}
+2022/04/07 01:21:35 [DEBUG] VM status: running
+[90mThu, 07 Apr 2022 01:21:35 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1348[0m[36m >[0m [READ] Received Config from Proxmox API: {"vmid":0,"name":"ansible","desc":"","bios":"seabios","onboot":false,"tablet":true,"agent":1,"memory":4096,"balloon":0,"os":"l26","cores":4,"sockets":2,"vcpus":0,"cpu":"host","numa":false,"kvm":true,"hotplug":"network,disk,usb","iso":"local-lvm:vm-101-cloudinit","pxe":false,"fullclone":null,"boot":"c","bootdisk":"scsi0","scsihw":"virtio-scsi-pci","disk":{"0":{"file":"vm-101-disk-0","format":"","size":"32972M","slot":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-101-disk-0"}},"unused_disk":{},"network":{"0":{"bridge":"vmbr120","id":0,"macaddr":"52:E1:27:70:CF:D7","model":"virtio"}},"serial":{"0":{"id":0,"type":"socket"}},"tags":"","args":"","diskGB":0,"storage":"","storageType":"","nic":"","bridge":"","vlan":-1,"mac":"","ciuser":"root","cipassword":"**********","cicustom":"","searchdomain":"newearth.local","nameserver":"10.0.0.254","sshkeys":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ/NNo+Pk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4+WmCSQ7XYlYw+Z6yV8sZu6ox1SoIYp/zvAbiMRqhKavj+mJ6i/wAx44sPeSxW/+/+Bl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC+6fjSbl/2fsyXjPPpBuGZ9wGDIWbLr/AHldulkOU+mmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1+UtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws+Er2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf/IERuq9iEgTufHL7pWvKR34k+h+LjVL+KrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr+FjnPkyfG5GrE= marchoogendoorn@AHoogendoorn\n\n\n","ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":""} [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:21:35 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1515[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr120 id:0 macaddr:C6:AD:1E:CE:31:3A model:virtio tag:-1]]' from '[map[bridge:vmbr120 macaddr:C6:AD:1E:CE:31:3A model:virtio tag:-1]]' set as '[map[bridge:vmbr120 firewall:false link_down:false macaddr:C6:AD:1E:CE:31:3A model:virtio mtu:0 queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+[90mThu, 07 Apr 2022 01:21:35 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1517[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":0,"agent":1,"args":"","automatic_reboot":true,"balloon":0,"bios":"seabios","boot":"c","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"ansible-op","clone":"","clone_wait":0,"cloudinit_cdrom_storage":"","cores":1,"cpu":"host","default_ipv4_address":"10.0.0.200","define_connection_info":true,"desc":"","disk":[{"aio":"","backup":0,"cache":"none","discard":"","file":"vm-102-disk-0","format":"","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"32972M","slot":0,"ssd":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-102-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":false,"guest_agent_ready_timeout":100,"hagroup":"","hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=10.0.0.200/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","iso":"","kvm":true,"mac":"","memory":2048,"name":"test-vm","nameserver":"10.0.0.254","network":[{"bridge":"vmbr120","firewall":false,"link_down":false,"macaddr":"C6:AD:1E:CE:31:3A","model":"virtio","mtu":0,"queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":false,"oncreate":true,"os_network_config":"","os_type":"","pool":"","preprovision":true,"pxe":false,"qemu_os":"l26","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"newearth.local","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"10.0.0.200","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server\n\n\n\n\n\n\n\n\n\n\n\n\n","storage":"","storage_type":"","tablet":true,"tags":"","target_node":"ml350p","unused_disk":[],"usb":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":0}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+[90mThu, 07 Apr 2022 01:21:35 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1440[0m[36m >[0m Unused Disk Block Processed 'map[0:map[bridge:vmbr120 id:0 macaddr:52:E1:27:70:CF:D7 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:21:35 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1454[0m[36m >[0m Network block received 'map[0:map[bridge:vmbr120 id:0 macaddr:52:E1:27:70:CF:D7 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+2022/04/07 01:21:35 >>>>>>>>>> REQUEST:
+GET /api2/json/pools HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:35 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:36 GMT
+Expires: Wed, 06 Apr 2022 23:21:36 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+[90mThu, 07 Apr 2022 01:21:35 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1515[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr120 id:0 macaddr:52:E1:27:70:CF:D7 model:virtio tag:-1]]' from '[map[bridge:vmbr120 macaddr:52:E1:27:70:CF:D7 model:virtio tag:-1]]' set as '[map[bridge:vmbr120 firewall:false link_down:false macaddr:52:E1:27:70:CF:D7 model:virtio mtu:0 queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:21:35 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1517[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":0,"agent":1,"args":"","automatic_reboot":true,"balloon":0,"bios":"seabios","boot":"c","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"root","clone":"","clone_wait":0,"cloudinit_cdrom_storage":"","cores":4,"cpu":"host","default_ipv4_address":"10.0.0.1","define_connection_info":true,"desc":"","disk":[{"aio":"","backup":0,"cache":"none","discard":"","file":"vm-101-disk-0","format":"","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"32972M","slot":0,"ssd":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-101-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":false,"guest_agent_ready_timeout":100,"hagroup":"","hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","iso":"","kvm":true,"mac":"","memory":4096,"name":"ansible","nameserver":"10.0.0.254","network":[{"bridge":"vmbr120","firewall":false,"link_down":false,"macaddr":"52:E1:27:70:CF:D7","model":"virtio","mtu":0,"queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":false,"oncreate":true,"os_network_config":"","os_type":"","pool":"","preprovision":true,"pxe":false,"qemu_os":"l26","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"newearth.local","serial":[],"sockets":2,"ssh_forward_ip":"","ssh_host":"10.0.0.1","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ/NNo+Pk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4+WmCSQ7XYlYw+Z6yV8sZu6ox1SoIYp/zvAbiMRqhKavj+mJ6i/wAx44sPeSxW/+/+Bl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC+6fjSbl/2fsyXjPPpBuGZ9wGDIWbLr/AHldulkOU+mmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1+UtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws+Er2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf/IERuq9iEgTufHL7pWvKR34k+h+LjVL+KrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr+FjnPkyfG5GrE= marchoogendoorn@AHoogendoorn\n\n\n","storage":"","storage_type":"","tablet":true,"tags":"","target_node":"ml350p","unused_disk":[],"usb":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":0}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:21:39 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:155[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mThu, 07 Apr 2022 01:21:39 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:188[0m[36m >[0m Logging Started. Root Logger Set to level debug
+[90mThu, 07 Apr 2022 01:21:39 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1319[0m[36m >[0m Reading configuration for vmid [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+[90mThu, 07 Apr 2022 01:21:39 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1319[0m[36m >[0m Reading configuration for vmid [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+2022/04/07 01:21:39 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:39 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:39 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1178
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"disk":0,"status":"running","name":"pfsense","maxdisk":34359738368,"type":"qemu","uptime":3413641,"maxcpu":8,"cpu":0.00669660897640872,"netout":7333289066,"mem":869069481,"vmid":100,"diskread":806958524,"node":"ml350p","netin":12509468793,"template":0,"id":"qemu/100","maxmem":2147483648,"diskwrite":71508369408},{"disk":0,"name":"ansible","status":"running","maxcpu":8,"cpu":0.00511377412743939,"maxdisk":34573647872,"type":"qemu","uptime":11780,"netout":6845543,"mem":873652224,"diskwrite":284733440,"maxmem":4294967296,"id":"qemu/101","vmid":101,"netin":504533,"template":0,"diskread":473226012,"node":"ml350p"},{"name":"test-vm","disk":0,"status":"running","maxcpu":1,"cpu":0.0399361408047647,"maxdisk":34573647872,"type":"qemu","uptime":19206,"mem":909991936,"netout":726531,"maxmem":2147483648,"diskwrite":684146688,"id":"qemu/102","vmid":102,"template":0,"netin":12558599,"diskread":558783260,"node":"ml350p"},{"id":"qemu/9000","maxmem":2147483648,"diskwrite":0,"node":"ml350p","diskread":0,"netin":0,"template":1,"vmid":9000,"netout":0,"mem":0,"cpu":0,"maxcpu":1,"type":"qemu","maxdisk":34573647872,"uptime":0,"name":"ubuntu2004","disk":0,"status":"stopped"}]}
+2022/04/07 01:21:39 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1178
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"cpu":0.00669660897640872,"maxcpu":8,"maxdisk":34359738368,"uptime":3413641,"type":"qemu","disk":0,"name":"pfsense","status":"running","id":"qemu/100","diskwrite":71508369408,"maxmem":2147483648,"diskread":806958524,"node":"ml350p","template":0,"netin":12509468793,"vmid":100,"netout":7333289066,"mem":869069481},{"netout":6845543,"mem":873652224,"id":"qemu/101","maxmem":4294967296,"diskwrite":284733440,"vmid":101,"node":"ml350p","diskread":473226012,"template":0,"netin":504533,"name":"ansible","disk":0,"status":"running","maxcpu":8,"cpu":0.00511377412743939,"uptime":11780,"maxdisk":34573647872,"type":"qemu"},{"id":"qemu/102","diskwrite":684146688,"maxmem":2147483648,"diskread":558783260,"node":"ml350p","netin":12558599,"template":0,"vmid":102,"netout":726531,"mem":909991936,"cpu":0.0399361408047647,"maxcpu":1,"type":"qemu","maxdisk":34573647872,"uptime":19206,"disk":0,"status":"running","name":"test-vm"},{"id":"qemu/9000","maxmem":2147483648,"diskwrite":0,"vmid":9000,"diskread":0,"node":"ml350p","template":1,"netin":0,"netout":0,"mem":0,"maxcpu":1,"cpu":0,"maxdisk":34573647872,"uptime":0,"type":"qemu","disk":0,"status":"stopped","name":"ubuntu2004"}]}
+2022/04/07 01:21:39 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/102/config HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:39 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/config HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:39 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1406
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"smbios1":"uuid=4721c9e9-0bc8-465d-8366-63c91b0c2057","scsi0":"local-lvm:vm-101-disk-0,size=32972M","name":"ansible","hotplug":"network,disk,usb","memory":4096,"net0":"virtio=52:E1:27:70:CF:D7,bridge=vmbr120","ostype":"l26","agent":"1","ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","sockets":2,"kvm":1,"searchdomain":"newearth.local","onboot":0,"bios":"seabios","digest":"195d41555a017928b36291e1d88e62fc31aa6bbc","ciuser":"root","serial0":"socket","scsihw":"virtio-scsi-pci","tablet":1,"bootdisk":"scsi0","numa":0,"boot":"c","sshkeys":"ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ%2FNNo%2BPk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4%2BWmCSQ7XYlYw%2BZ6yV8sZu6ox1SoIYp%2FzvAbiMRqhKavj%2BmJ6i%2FwAx44sPeSxW%2F%2B%2F%2BBl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC%2B6fjSbl%2F2fsyXjPPpBuGZ9wGDIWbLr%2FAHldulkOU%2BmmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1%2BUtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws%2BEr2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf%2FIERuq9iEgTufHL7pWvKR34k%2Bh%2BLjVL%2BKrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr%2BFjnPkyfG5GrE%3D%20marchoogendoorn%40AHoogendoorn%0A%0A%0A","cpu":"host","nameserver":"10.0.0.254","ide2":"local-lvm:vm-101-cloudinit,media=cdrom","meta":"creation-qemu=6.1.0,ctime=1645701492","cipassword":"**********","cores":4,"vmgenid":"82328727-1755-465e-8e94-92a7c93db9de"}}
+2022/04/07 01:21:39 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 949
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"serial0":"socket","ciuser":"ansible-op","digest":"304e49c31e687ae8d3713101fa961ec78e3c2092","scsihw":"virtio-scsi-pci","bootdisk":"scsi0","tablet":1,"onboot":0,"bios":"seabios","hotplug":"network,disk,usb","memory":2048,"agent":"1","net0":"virtio=C6:AD:1E:CE:31:3A,bridge=vmbr120","ostype":"l26","kvm":1,"ipconfig0":"ip=10.0.0.200/24,gw=10.0.0.254","sockets":1,"searchdomain":"newearth.local","scsi0":"local-lvm:vm-102-disk-0,size=32972M","smbios1":"uuid=80b1d186-0af0-4a19-affd-53af7938ca95","name":"test-vm","vmgenid":"5091cf9a-950b-46ce-bc1b-b498ab2f9ed1","cipassword":"**********","cores":1,"sshkeys":"ssh-ed25519%20AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV%20ansible-op%40ansible-server%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A","parent":"hehehe","meta":"creation-qemu=6.1.0,ctime=1645701492","nameserver":"10.0.0.254","ide2":"local-lvm:vm-102-cloudinit,media=cdrom,size=4M","cpu":"host","numa":0,"boot":"c"}}
+2022/04/07 01:21:39 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/content HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:39 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/content HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:39 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+2022/04/07 01:21:39 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:39 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+2022/04/07 01:21:39 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:40 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 149
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"avail":346921298717,"type":"lvmthin","enabled":1,"active":1,"shared":0,"used":16385119459,"content":"images,rootdir","total":363306418176}}
+2022/04/07 01:21:40 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/status/current HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:40 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 2205
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"balloon":4294967296,"running-qemu":"6.1.0","running-machine":"pc-i440fx-6.1+pve0","freemem":3247513600,"blockstat":{"scsi0":{"invalid_flush_operations":0,"rd_operations":12937,"unmap_operations":0,"failed_flush_operations":0,"rd_merged":0,"rd_bytes":472881664,"wr_highest_offset":19445854208,"invalid_rd_operations":0,"failed_rd_operations":0,"invalid_wr_operations":0,"wr_bytes":284733440,"unmap_total_time_ns":0,"wr_operations":3701,"account_failed":true,"unmap_bytes":0,"wr_merged":0,"failed_wr_operations":0,"flush_total_time_ns":379722887,"unmap_merged":0,"wr_total_time_ns":54368479440,"invalid_unmap_operations":0,"flush_operations":235,"failed_unmap_operations":0,"rd_total_time_ns":28690775938,"timed_stats":[],"account_invalid":true,"idle_time_ns":71289203888},"ide2":{"rd_total_time_ns":8427279,"failed_unmap_operations":0,"flush_operations":0,"idle_time_ns":11770681885602,"account_invalid":true,"timed_stats":[],"flush_total_time_ns":0,"failed_wr_operations":0,"invalid_unmap_operations":0,"wr_total_time_ns":0,"unmap_merged":0,"unmap_total_time_ns":0,"wr_bytes":0,"invalid_wr_operations":0,"failed_rd_operations":0,"wr_merged":0,"unmap_bytes":0,"account_failed":true,"wr_operations":0,"rd_merged":0,"failed_flush_operations":0,"unmap_operations":0,"rd_operations":98,"invalid_flush_operations":0,"invalid_rd_operations":0,"wr_highest_offset":0,"rd_bytes":344348}},"maxdisk":34573647872,"diskwrite":284733440,"qmpstatus":"running","vmid":101,"agent":1,"status":"running","proxmox-support":{"query-bitmap-info":true,"pbs-dirty-bitmap-migration":true,"pbs-masterkey":true,"pbs-dirty-bitmap":true,"pbs-library-version":"1.2.0 (6e555bc73a7dcfb4d0b47355b958afd101ad27b5)","pbs-dirty-bitmap-savevm":true},"cpus":8,"netin":504533,"diskread":473226012,"serial":1,"ha":{"managed":0},"pid":2132645,"cpu":0.00517712821138423,"netout":6845543,"uptime":11782,"mem":873652224,"maxmem":4294967296,"nics":{"tap101i0":{"netout":6845543,"netin":504533}},"ballooninfo":{"minor_page_faults":2379670,"last_update":1649287299,"total_mem":4121165824,"actual":4294967296,"mem_swapped_in":0,"major_page_faults":2071,"max_mem":4294967296,"mem_swapped_out":0,"free_mem":3247513600},"disk":0,"name":"ansible"}}
+2022/04/07 01:21:40 [DEBUG] VM status: running
+[90mThu, 07 Apr 2022 01:21:40 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1348[0m[36m >[0m [READ] Received Config from Proxmox API: {"vmid":0,"name":"ansible","desc":"","bios":"seabios","onboot":false,"tablet":true,"agent":1,"memory":4096,"balloon":0,"os":"l26","cores":4,"sockets":2,"vcpus":0,"cpu":"host","numa":false,"kvm":true,"hotplug":"network,disk,usb","iso":"local-lvm:vm-101-cloudinit","pxe":false,"fullclone":null,"boot":"c","bootdisk":"scsi0","scsihw":"virtio-scsi-pci","disk":{"0":{"file":"vm-101-disk-0","format":"","size":"32972M","slot":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-101-disk-0"}},"unused_disk":{},"network":{"0":{"bridge":"vmbr120","id":0,"macaddr":"52:E1:27:70:CF:D7","model":"virtio"}},"serial":{"0":{"id":0,"type":"socket"}},"tags":"","args":"","diskGB":0,"storage":"","storageType":"","nic":"","bridge":"","vlan":-1,"mac":"","ciuser":"root","cipassword":"**********","cicustom":"","searchdomain":"newearth.local","nameserver":"10.0.0.254","sshkeys":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ/NNo+Pk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4+WmCSQ7XYlYw+Z6yV8sZu6ox1SoIYp/zvAbiMRqhKavj+mJ6i/wAx44sPeSxW/+/+Bl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC+6fjSbl/2fsyXjPPpBuGZ9wGDIWbLr/AHldulkOU+mmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1+UtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws+Er2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf/IERuq9iEgTufHL7pWvKR34k+h+LjVL+KrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr+FjnPkyfG5GrE= marchoogendoorn@AHoogendoorn\n\n\n","ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":""} [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:21:40 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1440[0m[36m >[0m Unused Disk Block Processed 'map[0:map[bridge:vmbr120 id:0 macaddr:52:E1:27:70:CF:D7 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:21:40 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1454[0m[36m >[0m Network block received 'map[0:map[bridge:vmbr120 id:0 macaddr:52:E1:27:70:CF:D7 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+2022/04/07 01:21:40 >>>>>>>>>> REQUEST:
+GET /api2/json/pools HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:40 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+[90mThu, 07 Apr 2022 01:21:40 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1515[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr120 id:0 macaddr:52:E1:27:70:CF:D7 model:virtio tag:-1]]' from '[map[bridge:vmbr120 macaddr:52:E1:27:70:CF:D7 model:virtio tag:-1]]' set as '[map[bridge:vmbr120 firewall:false link_down:false macaddr:52:E1:27:70:CF:D7 model:virtio mtu:0 queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:21:40 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1517[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":0,"agent":1,"args":"","automatic_reboot":true,"balloon":0,"bios":"seabios","boot":"c","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"root","clone":"","clone_wait":0,"cloudinit_cdrom_storage":"","cores":4,"cpu":"host","default_ipv4_address":"10.0.0.1","define_connection_info":true,"desc":"","disk":[{"aio":"","backup":0,"cache":"none","discard":"","file":"vm-101-disk-0","format":"","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"32972M","slot":0,"ssd":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-101-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":false,"guest_agent_ready_timeout":100,"hagroup":"","hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","iso":"","kvm":true,"mac":"","memory":4096,"name":"ansible","nameserver":"10.0.0.254","network":[{"bridge":"vmbr120","firewall":false,"link_down":false,"macaddr":"52:E1:27:70:CF:D7","model":"virtio","mtu":0,"queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":false,"oncreate":true,"os_network_config":"","os_type":"","pool":"","preprovision":true,"pxe":false,"qemu_os":"l26","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"newearth.local","serial":[],"sockets":2,"ssh_forward_ip":"","ssh_host":"10.0.0.1","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ/NNo+Pk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4+WmCSQ7XYlYw+Z6yV8sZu6ox1SoIYp/zvAbiMRqhKavj+mJ6i/wAx44sPeSxW/+/+Bl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC+6fjSbl/2fsyXjPPpBuGZ9wGDIWbLr/AHldulkOU+mmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1+UtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws+Er2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf/IERuq9iEgTufHL7pWvKR34k+h+LjVL+KrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr+FjnPkyfG5GrE= marchoogendoorn@AHoogendoorn\n\n\n","storage":"","storage_type":"","tablet":true,"tags":"","target_node":"ml350p","unused_disk":[],"usb":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":0}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+2022/04/07 01:21:40 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 149
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"avail":346921298717,"type":"lvmthin","active":1,"enabled":1,"shared":0,"used":16385119459,"total":363306418176,"content":"rootdir,images"}}
+2022/04/07 01:21:40 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/102/status/current HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:40 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 2190
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"running-qemu":"6.1.0","balloon":2147483648,"running-machine":"pc-i440fx-6.1+pve0","blockstat":{"ide2":{"idle_time_ns":19194750436088,"timed_stats":[],"account_invalid":true,"failed_unmap_operations":0,"flush_operations":0,"rd_total_time_ns":6411654,"invalid_unmap_operations":0,"unmap_merged":0,"wr_total_time_ns":0,"flush_total_time_ns":0,"failed_wr_operations":0,"unmap_bytes":0,"wr_operations":0,"account_failed":true,"wr_merged":0,"invalid_wr_operations":0,"failed_rd_operations":0,"wr_bytes":0,"unmap_total_time_ns":0,"invalid_rd_operations":0,"wr_highest_offset":0,"rd_bytes":344348,"failed_flush_operations":0,"rd_operations":98,"unmap_operations":0,"rd_merged":0,"invalid_flush_operations":0},"scsi0":{"rd_total_time_ns":17809096449,"failed_unmap_operations":0,"flush_operations":921,"account_invalid":true,"timed_stats":[],"idle_time_ns":212051466597,"failed_wr_operations":0,"flush_total_time_ns":695156996,"wr_total_time_ns":97832403145,"unmap_merged":0,"invalid_unmap_operations":0,"wr_bytes":684146688,"unmap_total_time_ns":0,"invalid_wr_operations":0,"failed_rd_operations":0,"wr_merged":0,"account_failed":true,"wr_operations":7209,"unmap_bytes":0,"invalid_flush_operations":0,"rd_merged":0,"failed_flush_operations":0,"unmap_operations":0,"rd_operations":12988,"rd_bytes":558438912,"invalid_rd_operations":0,"wr_highest_offset":15296184320}},"freemem":1169629184,"diskwrite":684146688,"maxdisk":34573647872,"netin":12558599,"diskread":558783260,"vmid":102,"qmpstatus":"running","proxmox-support":{"pbs-dirty-bitmap-migration":true,"query-bitmap-info":true,"pbs-library-version":"1.2.0 (6e555bc73a7dcfb4d0b47355b958afd101ad27b5)","pbs-dirty-bitmap-savevm":true,"pbs-dirty-bitmap":true,"pbs-masterkey":true},"cpus":1,"status":"running","agent":1,"pid":2098742,"ha":{"managed":0},"serial":1,"netout":726531,"uptime":19208,"cpu":0,"maxmem":2147483648,"mem":909991936,"nics":{"tap102i0":{"netin":12558599,"netout":726531}},"name":"test-vm","ballooninfo":{"mem_swapped_out":0,"free_mem":1169629184,"max_mem":2147483648,"major_page_faults":2120,"mem_swapped_in":0,"total_mem":2079621120,"actual":2147483648,"minor_page_faults":3604582,"last_update":1649287299},"disk":0}}
+2022/04/07 01:21:40 [DEBUG] VM status: running
+[90mThu, 07 Apr 2022 01:21:40 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1348[0m[36m >[0m [READ] Received Config from Proxmox API: {"vmid":0,"name":"test-vm","desc":"","bios":"seabios","onboot":false,"tablet":true,"agent":1,"memory":2048,"balloon":0,"os":"l26","cores":1,"sockets":1,"vcpus":0,"cpu":"host","numa":false,"kvm":true,"hotplug":"network,disk,usb","iso":"local-lvm:vm-102-cloudinit","pxe":false,"fullclone":null,"boot":"c","bootdisk":"scsi0","scsihw":"virtio-scsi-pci","disk":{"0":{"file":"vm-102-disk-0","format":"","size":"32972M","slot":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-102-disk-0"}},"unused_disk":{},"network":{"0":{"bridge":"vmbr120","id":0,"macaddr":"C6:AD:1E:CE:31:3A","model":"virtio"}},"serial":{"0":{"id":0,"type":"socket"}},"tags":"","args":"","diskGB":0,"storage":"","storageType":"","nic":"","bridge":"","vlan":-1,"mac":"","ciuser":"ansible-op","cipassword":"**********","cicustom":"","searchdomain":"newearth.local","nameserver":"10.0.0.254","sshkeys":"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server\n\n\n\n\n\n\n\n\n\n\n\n\n","ipconfig0":"ip=10.0.0.200/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":""} [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+[90mThu, 07 Apr 2022 01:21:40 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1440[0m[36m >[0m Unused Disk Block Processed 'map[0:map[bridge:vmbr120 id:0 macaddr:C6:AD:1E:CE:31:3A model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+[90mThu, 07 Apr 2022 01:21:40 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1454[0m[36m >[0m Network block received 'map[0:map[bridge:vmbr120 id:0 macaddr:C6:AD:1E:CE:31:3A model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+2022/04/07 01:21:40 >>>>>>>>>> REQUEST:
+GET /api2/json/pools HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:40 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:40 GMT
+Expires: Wed, 06 Apr 2022 23:21:40 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+[90mThu, 07 Apr 2022 01:21:40 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1515[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr120 id:0 macaddr:C6:AD:1E:CE:31:3A model:virtio tag:-1]]' from '[map[bridge:vmbr120 macaddr:C6:AD:1E:CE:31:3A model:virtio tag:-1]]' set as '[map[bridge:vmbr120 firewall:false link_down:false macaddr:C6:AD:1E:CE:31:3A model:virtio mtu:0 queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+[90mThu, 07 Apr 2022 01:21:40 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1517[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":0,"agent":1,"args":"","automatic_reboot":true,"balloon":0,"bios":"seabios","boot":"c","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"ansible-op","clone":"","clone_wait":0,"cloudinit_cdrom_storage":"","cores":1,"cpu":"host","default_ipv4_address":"10.0.0.200","define_connection_info":true,"desc":"","disk":[{"aio":"","backup":0,"cache":"none","discard":"","file":"vm-102-disk-0","format":"","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"32972M","slot":0,"ssd":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-102-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":false,"guest_agent_ready_timeout":100,"hagroup":"","hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=10.0.0.200/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","iso":"","kvm":true,"mac":"","memory":2048,"name":"test-vm","nameserver":"10.0.0.254","network":[{"bridge":"vmbr120","firewall":false,"link_down":false,"macaddr":"C6:AD:1E:CE:31:3A","model":"virtio","mtu":0,"queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":false,"oncreate":true,"os_network_config":"","os_type":"","pool":"","preprovision":true,"pxe":false,"qemu_os":"l26","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"newearth.local","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"10.0.0.200","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server\n\n\n\n\n\n\n\n\n\n\n\n\n","storage":"","storage_type":"","tablet":true,"tags":"","target_node":"ml350p","unused_disk":[],"usb":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":0}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m102
+[90mThu, 07 Apr 2022 01:21:42 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:155[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mThu, 07 Apr 2022 01:21:42 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:188[0m[36m >[0m Logging Started. Root Logger Set to level debug
+[90mThu, 07 Apr 2022 01:21:42 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1004[0m[36m >[0m Starting update of the VM resource [36mloggerName=[0mresource_vm_update [36mvmid=[0m101
+2022/04/07 01:21:42 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:42 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1178
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:43 GMT
+Expires: Wed, 06 Apr 2022 23:21:43 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"diskwrite":71508369408,"maxmem":2147483648,"id":"qemu/100","vmid":100,"netin":12509468793,"template":0,"diskread":806958524,"node":"ml350p","mem":869069481,"netout":7333289066,"maxcpu":8,"cpu":0.00669660897640872,"maxdisk":34359738368,"type":"qemu","uptime":3413641,"disk":0,"status":"running","name":"pfsense"},{"template":0,"netin":504533,"node":"ml350p","diskread":473226012,"vmid":101,"diskwrite":284733440,"maxmem":4294967296,"id":"qemu/101","mem":873652224,"netout":6845543,"type":"qemu","maxdisk":34573647872,"uptime":11780,"cpu":0.00511377412743939,"maxcpu":8,"disk":0,"name":"ansible","status":"running"},{"mem":909991936,"netout":726531,"id":"qemu/102","diskwrite":684146688,"maxmem":2147483648,"diskread":558783260,"node":"ml350p","netin":12558599,"template":0,"vmid":102,"disk":0,"status":"running","name":"test-vm","cpu":0.0399361408047647,"maxcpu":1,"uptime":19206,"maxdisk":34573647872,"type":"qemu"},{"name":"ubuntu2004","disk":0,"status":"stopped","cpu":0,"maxcpu":1,"maxdisk":34573647872,"type":"qemu","uptime":0,"mem":0,"netout":0,"id":"qemu/9000","diskwrite":0,"maxmem":2147483648,"node":"ml350p","diskread":0,"netin":0,"template":1,"vmid":9000}]}
+[90mThu, 07 Apr 2022 01:21:42 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1028[0m[36m >[0m Processed NetworkSet into qemuNetworks as map[0:map[bridge:vmbr120 firewall:false link_down:false macaddr:52:E1:27:70:CF:D7 model:virtio mtu:0 queues:0 rate:0 tag:-1]] [36mloggerName=[0mresource_vm_update [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:21:42 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1103[0m[36m >[0m Updating VM with the following configuration: {"vmid":0,"name":"ansible","desc":"","bios":"seabios","onboot":false,"tablet":true,"agent":1,"memory":4096,"balloon":0,"os":"l26","cores":4,"sockets":2,"vcpus":0,"cpu":"host","numa":false,"kvm":true,"hotplug":"network,disk,usb","iso":"","pxe":false,"fullclone":null,"boot":"c","bootdisk":"scsi0","scsihw":"virtio-scsi-pci","disk":{"0":{"aio":"","backup":0,"cache":"none","discard":"","format":"","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"replicate":0,"size":"32972M","slot":0,"ssd":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-101-disk-0"}},"unused_disk":null,"network":{"0":{"bridge":"vmbr120","firewall":false,"link_down":false,"macaddr":"52:E1:27:70:CF:D7","model":"virtio","mtu":0,"queues":0,"rate":0,"tag":-1}},"tags":"","args":"","diskGB":0,"storage":"","storageType":"","nic":"","bridge":"","vlan":-1,"mac":"","ciuser":"root","cipassword":"","cicustom":"","searchdomain":"newearth.local","nameserver":"10.0.0.254","sshkeys":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ/NNo+Pk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4+WmCSQ7XYlYw+Z6yV8sZu6ox1SoIYp/zvAbiMRqhKavj+mJ6i/wAx44sPeSxW/+/+Bl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC+6fjSbl/2fsyXjPPpBuGZ9wGDIWbLr/AHldulkOU+mmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1+UtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws+Er2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf/IERuq9iEgTufHL7pWvKR34k+h+LjVL+KrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr+FjnPkyfG5GrE= marchoogendoorn@Air-van-marc","ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":""} [36mloggerName=[0mresource_vm_update [36mvmid=[0m101
+2022/04/07 01:21:42 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/ml350p/qemu/101/config HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 1125
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip
+
+agent=1&bios=seabios&boot=c&bootdisk=scsi0&ciuser=root&cores=4&cpu=host&delete=balloon%2C+vcpus%2C+vga&hotplug=network%2Cdisk%2Cusb&ipconfig0=ip%3D10.0.0.1%2F24%2Cgw%3D10.0.0.254&kvm=1&memory=4096&name=ansible&nameserver=10.0.0.254&net0=virtio%3D52%3AE1%3A27%3A70%3ACF%3AD7%2Cbridge%3Dvmbr120&numa=0&onboot=0&scsi0=local-lvm%3Avm-101-disk-0%2Csize%3D32972M&scsihw=virtio-scsi-pci&searchdomain=newearth.local&sockets=2&sshkeys=ssh-rsa%2520AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ%252FNNo%252BPk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4%252BWmCSQ7XYlYw%252BZ6yV8sZu6ox1SoIYp%252FzvAbiMRqhKavj%252BmJ6i%252FwAx44sPeSxW%252F%252B%252F%252BBl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC%252B6fjSbl%252F2fsyXjPPpBuGZ9wGDIWbLr%252FAHldulkOU%252BmmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1%252BUtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws%252BEr2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf%252FIERuq9iEgTufHL7pWvKR34k%252Bh%252BLjVL%252BKrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr%252BFjnPkyfG5GrE%253D%2520marchoogendoorn%2540Air-van-marc%250A&tablet=1
+2022/04/07 01:21:42 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 90
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:43 GMT
+Expires: Wed, 06 Apr 2022 23:21:43 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:ml350p:002183FC:1525F42A:624E2087:qmconfig:101:TerraformProv@pam!my_token:"}
+2022/04/07 01:21:42 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/tasks/UPID:ml350p:002183FC:1525F42A:624E2087:qmconfig:101:TerraformProv@pam!my_token:/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:42 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 267
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:43 GMT
+Expires: Wed, 06 Apr 2022 23:21:43 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2196476,"type":"qmconfig","upid":"UPID:ml350p:002183FC:1525F42A:624E2087:qmconfig:101:TerraformProv@pam!my_token:","pstart":354808874,"tokenid":"my_token","user":"TerraformProv@pam","id":"101","starttime":1649287303,"node":"ml350p","status":"running"}}
+2022/04/07 01:21:44 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/tasks/UPID:ml350p:002183FC:1525F42A:624E2087:qmconfig:101:TerraformProv@pam!my_token:/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:44 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 285
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:45 GMT
+Expires: Wed, 06 Apr 2022 23:21:45 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"status":"stopped","exitstatus":"OK","node":"ml350p","user":"TerraformProv@pam","tokenid":"my_token","upid":"UPID:ml350p:002183FC:1525F42A:624E2087:qmconfig:101:TerraformProv@pam!my_token:","type":"qmconfig","id":"101","starttime":1649287303,"pid":2196476,"pstart":354808874}}
+2022/04/07 01:21:49 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/config HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:49 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1400
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:50 GMT
+Expires: Wed, 06 Apr 2022 23:21:50 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"meta":"creation-qemu=6.1.0,ctime=1645701492","nameserver":"10.0.0.254","cpu":"host","ide2":"local-lvm:vm-101-cloudinit,media=cdrom","sshkeys":"ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ%2FNNo%2BPk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4%2BWmCSQ7XYlYw%2BZ6yV8sZu6ox1SoIYp%2FzvAbiMRqhKavj%2BmJ6i%2FwAx44sPeSxW%2F%2B%2F%2BBl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC%2B6fjSbl%2F2fsyXjPPpBuGZ9wGDIWbLr%2FAHldulkOU%2BmmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1%2BUtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws%2BEr2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf%2FIERuq9iEgTufHL7pWvKR34k%2Bh%2BLjVL%2BKrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr%2BFjnPkyfG5GrE%3D%20marchoogendoorn%40Air-van-marc%0A","boot":"c","numa":0,"vmgenid":"82328727-1755-465e-8e94-92a7c93db9de","cipassword":"**********","cores":4,"kvm":1,"sockets":2,"ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","searchdomain":"newearth.local","hotplug":"network,disk,usb","memory":4096,"agent":"1","net0":"virtio=52:E1:27:70:CF:D7,bridge=vmbr120","ostype":"l26","scsi0":"local-lvm:vm-101-disk-0,size=32972M","smbios1":"uuid=4721c9e9-0bc8-465d-8366-63c91b0c2057","name":"ansible","scsihw":"virtio-scsi-pci","bootdisk":"scsi0","tablet":1,"serial0":"socket","ciuser":"root","digest":"1601a552a37cd020fe1c8ca196ade4edc6523a2e","bios":"seabios","onboot":0}}
+2022/04/07 01:21:49 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/content HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:50 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:51 GMT
+Expires: Wed, 06 Apr 2022 23:21:51 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+2022/04/07 01:21:50 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:21:50 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 149
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:21:51 GMT
+Expires: Wed, 06 Apr 2022 23:21:51 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"total":363306418176,"content":"rootdir,images","used":16385119459,"active":1,"enabled":1,"shared":0,"type":"lvmthin","avail":346921298717}}
+[90mThu, 07 Apr 2022 01:21:50 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1579[0m[36m >[0m Checking disk sizing. Original '32.19921875', New '32.19921875' [36mdiskId=[0m0 [36mloggerName=[0mprepareDiskSize
+[90mThu, 07 Apr 2022 01:21:50 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1590[0m[36m >[0m Disk is same size as before, skipping resize. Original '32.19921875', New '32.19921875' [36mdiskId=[0m0 [36mloggerName=[0mprepareDiskSize
+2022/04/07 01:22:05 [DEBUG][initConnInfo] trying to get vm ip address for provisioner
+2022/04/07 01:22:05 [DEBUG][initConnInfo] retrying for at most  5m0s minutes before giving up
+2022/04/07 01:22:05 [DEBUG][initConnInfo] retries will end at 2022-04-07 01:27:05.6161914 +0200 CEST m=+322.765063301
+2022/04/07 01:22:05 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/agent/network-get-interfaces HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:05 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 707
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:06 GMT
+Expires: Wed, 06 Apr 2022 23:22:06 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"result":[{"statistics":{"rx-errs":0,"tx-packets":176,"tx-dropped":0,"rx-bytes":14214,"rx-dropped":0,"tx-bytes":14214,"tx-errs":0,"rx-packets":176},"name":"lo","hardware-address":"00:00:00:00:00:00","ip-addresses":[{"prefix":8,"ip-address":"127.0.0.1","ip-address-type":"ipv4"},{"ip-address-type":"ipv6","ip-address":"::1","prefix":128}]},{"ip-addresses":[{"ip-address":"10.0.0.1","prefix":24,"ip-address-type":"ipv4"},{"ip-address-type":"ipv6","prefix":64,"ip-address":"fe80::50e1:27ff:fe70:cfd7"}],"hardware-address":"52:e1:27:70:cf:d7","name":"eth0","statistics":{"rx-errs":0,"tx-packets":3353,"tx-dropped":0,"rx-bytes":504533,"rx-dropped":0,"tx-bytes":6845543,"tx-errs":0,"rx-packets":3936}}]}}
+2022/04/07 01:22:05 [DEBUG][initConnInfo] found working QEMU Agent
+2022/04/07 01:22:05 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/config HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:05 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1400
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:06 GMT
+Expires: Wed, 06 Apr 2022 23:22:06 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"cipassword":"**********","cores":4,"vmgenid":"82328727-1755-465e-8e94-92a7c93db9de","boot":"c","numa":0,"meta":"creation-qemu=6.1.0,ctime=1645701492","cpu":"host","nameserver":"10.0.0.254","ide2":"local-lvm:vm-101-cloudinit,media=cdrom","sshkeys":"ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ%2FNNo%2BPk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4%2BWmCSQ7XYlYw%2BZ6yV8sZu6ox1SoIYp%2FzvAbiMRqhKavj%2BmJ6i%2FwAx44sPeSxW%2F%2B%2F%2BBl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC%2B6fjSbl%2F2fsyXjPPpBuGZ9wGDIWbLr%2FAHldulkOU%2BmmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1%2BUtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws%2BEr2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf%2FIERuq9iEgTufHL7pWvKR34k%2Bh%2BLjVL%2BKrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr%2BFjnPkyfG5GrE%3D%20marchoogendoorn%40Air-van-marc%0A","bios":"seabios","onboot":0,"scsihw":"virtio-scsi-pci","bootdisk":"scsi0","tablet":1,"serial0":"socket","digest":"1601a552a37cd020fe1c8ca196ade4edc6523a2e","ciuser":"root","scsi0":"local-lvm:vm-101-disk-0,size=32972M","smbios1":"uuid=4721c9e9-0bc8-465d-8366-63c91b0c2057","name":"ansible","kvm":1,"ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","sockets":2,"searchdomain":"newearth.local","hotplug":"network,disk,usb","memory":4096,"agent":"1","ostype":"l26","net0":"virtio=52:E1:27:70:CF:D7,bridge=vmbr120"}}
+2022/04/07 01:22:05 [DEBUG][initConnInfo] trying to find IP address of first network card
+2022/04/07 01:22:05 [DEBUG][initConnInfo] checking network card...
+2022/04/07 01:22:05 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/agent/network-get-interfaces HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:06 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 707
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:06 GMT
+Expires: Wed, 06 Apr 2022 23:22:06 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"result":[{"statistics":{"rx-dropped":0,"tx-bytes":14214,"tx-errs":0,"rx-packets":176,"rx-errs":0,"tx-packets":176,"tx-dropped":0,"rx-bytes":14214},"name":"lo","ip-addresses":[{"ip-address-type":"ipv4","ip-address":"127.0.0.1","prefix":8},{"ip-address-type":"ipv6","ip-address":"::1","prefix":128}],"hardware-address":"00:00:00:00:00:00"},{"name":"eth0","hardware-address":"52:e1:27:70:cf:d7","ip-addresses":[{"ip-address-type":"ipv4","ip-address":"10.0.0.1","prefix":24},{"prefix":64,"ip-address":"fe80::50e1:27ff:fe70:cfd7","ip-address-type":"ipv6"}],"statistics":{"tx-errs":0,"rx-packets":3936,"rx-dropped":0,"tx-bytes":6845543,"tx-dropped":0,"rx-bytes":504533,"rx-errs":0,"tx-packets":3353}}]}}
+2022/04/07 01:22:06 [DEBUG][initConnInfo] Found IP address: 10.0.0.1
+2022/04/07 01:22:06 [DEBUG][initConnInfo] vm has a cloud-init configuration
+2022/04/07 01:22:06 [DEBUG]  found an ip configuration
+2022/04/07 01:22:06 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/status/current HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:06 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 2205
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:06 GMT
+Expires: Wed, 06 Apr 2022 23:22:06 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"maxdisk":34573647872,"diskwrite":284733440,"qmpstatus":"running","vmid":101,"proxmox-support":{"pbs-dirty-bitmap-migration":true,"query-bitmap-info":true,"pbs-dirty-bitmap":true,"pbs-dirty-bitmap-savevm":true,"pbs-library-version":"1.2.0 (6e555bc73a7dcfb4d0b47355b958afd101ad27b5)","pbs-masterkey":true},"cpus":8,"agent":1,"status":"running","netin":504533,"diskread":473226012,"running-qemu":"6.1.0","balloon":4294967296,"running-machine":"pc-i440fx-6.1+pve0","freemem":3247513600,"blockstat":{"scsi0":{"unmap_total_time_ns":0,"wr_bytes":284733440,"invalid_wr_operations":0,"failed_rd_operations":0,"wr_merged":0,"unmap_bytes":0,"wr_operations":3701,"account_failed":true,"invalid_flush_operations":0,"rd_merged":0,"failed_flush_operations":0,"unmap_operations":0,"rd_operations":12937,"rd_bytes":472881664,"invalid_rd_operations":0,"wr_highest_offset":19445854208,"rd_total_time_ns":28690775938,"failed_unmap_operations":0,"flush_operations":235,"account_invalid":true,"timed_stats":[],"idle_time_ns":97240799739,"failed_wr_operations":0,"flush_total_time_ns":379722887,"wr_total_time_ns":54368479440,"unmap_merged":0,"invalid_unmap_operations":0},"ide2":{"unmap_merged":0,"wr_total_time_ns":0,"invalid_unmap_operations":0,"failed_wr_operations":0,"flush_total_time_ns":0,"timed_stats":[],"account_invalid":true,"idle_time_ns":11796633480208,"flush_operations":0,"failed_unmap_operations":0,"rd_total_time_ns":8427279,"rd_bytes":344348,"wr_highest_offset":0,"invalid_rd_operations":0,"invalid_flush_operations":0,"rd_operations":98,"unmap_operations":0,"failed_flush_operations":0,"rd_merged":0,"account_failed":true,"unmap_bytes":0,"wr_operations":0,"wr_merged":0,"failed_rd_operations":0,"invalid_wr_operations":0,"wr_bytes":0,"unmap_total_time_ns":0}},"maxmem":4294967296,"mem":873652224,"nics":{"tap101i0":{"netout":6845543,"netin":504533}},"ballooninfo":{"last_update":1649287325,"minor_page_faults":2379670,"actual":4294967296,"total_mem":4121165824,"mem_swapped_in":0,"free_mem":3247513600,"mem_swapped_out":0,"major_page_faults":2071,"max_mem":4294967296},"disk":0,"name":"ansible","ha":{"managed":0},"serial":1,"pid":2132645,"cpu":0.00513356436163801,"netout":6845543,"uptime":11808}}
+2022/04/07 01:22:06 [DEBUG][QemuVmUpdate] shutting down VM
+2022/04/07 01:22:06 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/ml350p/qemu/101/status/shutdown HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 0
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:06 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 92
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:06 GMT
+Expires: Wed, 06 Apr 2022 23:22:06 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:ml350p:0021855F:1525FD31:624E209E:qmshutdown:101:TerraformProv@pam!my_token:"}
+2022/04/07 01:22:06 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/tasks/UPID:ml350p:0021855F:1525FD31:624E209E:qmshutdown:101:TerraformProv@pam!my_token:/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:06 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 271
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:06 GMT
+Expires: Wed, 06 Apr 2022 23:22:06 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"user":"TerraformProv@pam","id":"101","starttime":1649287326,"status":"running","node":"ml350p","pid":2196831,"upid":"UPID:ml350p:0021855F:1525FD31:624E209E:qmshutdown:101:TerraformProv@pam!my_token:","type":"qmshutdown","pstart":354811185,"tokenid":"my_token"}}
+2022/04/07 01:22:08 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/tasks/UPID:ml350p:0021855F:1525FD31:624E209E:qmshutdown:101:TerraformProv@pam!my_token:/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:08 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 271
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:08 GMT
+Expires: Wed, 06 Apr 2022 23:22:08 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"ml350p","status":"running","id":"101","user":"TerraformProv@pam","starttime":1649287326,"tokenid":"my_token","upid":"UPID:ml350p:0021855F:1525FD31:624E209E:qmshutdown:101:TerraformProv@pam!my_token:","type":"qmshutdown","pid":2196831,"pstart":354811185}}
+2022/04/07 01:22:10 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/tasks/UPID:ml350p:0021855F:1525FD31:624E209E:qmshutdown:101:TerraformProv@pam!my_token:/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:10 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 289
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:10 GMT
+Expires: Wed, 06 Apr 2022 23:22:10 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":2196831,"pstart":354811185,"id":"101","starttime":1649287326,"upid":"UPID:ml350p:0021855F:1525FD31:624E209E:qmshutdown:101:TerraformProv@pam!my_token:","type":"qmshutdown","tokenid":"my_token","user":"TerraformProv@pam","status":"stopped","exitstatus":"OK","node":"ml350p"}}
+2022/04/07 01:22:10 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/status/current HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:10 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 254
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:10 GMT
+Expires: Wed, 06 Apr 2022 23:22:10 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"cpu":0,"netout":0,"uptime":0,"ha":{"managed":0},"serial":1,"vmid":101,"qmpstatus":"stopped","cpus":8,"disk":0,"status":"stopped","agent":1,"netin":0,"name":"ansible","diskread":0,"maxmem":4294967296,"mem":0,"maxdisk":34573647872,"diskwrite":0}}
+2022/04/07 01:22:10 [DEBUG][QemuVmUpdate] starting VM
+2022/04/07 01:22:10 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/ml350p/qemu/101/status/start HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 0
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:10 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 89
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:10 GMT
+Expires: Wed, 06 Apr 2022 23:22:10 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:ml350p:00218609:1525FEC7:624E20A2:qmstart:101:TerraformProv@pam!my_token:"}
+2022/04/07 01:22:10 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/tasks/UPID:ml350p:00218609:1525FEC7:624E20A2:qmstart:101:TerraformProv@pam!my_token:/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:10 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 265
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:10 GMT
+Expires: Wed, 06 Apr 2022 23:22:10 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pstart":354811591,"pid":2197001,"type":"qmstart","upid":"UPID:ml350p:00218609:1525FEC7:624E20A2:qmstart:101:TerraformProv@pam!my_token:","tokenid":"my_token","starttime":1649287330,"id":"101","user":"TerraformProv@pam","node":"ml350p","status":"running"}}
+2022/04/07 01:22:12 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/tasks/UPID:ml350p:00218609:1525FEC7:624E20A2:qmstart:101:TerraformProv@pam!my_token:/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:12 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 283
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:12 GMT
+Expires: Wed, 06 Apr 2022 23:22:12 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"exitstatus":"OK","status":"stopped","node":"ml350p","user":"TerraformProv@pam","tokenid":"my_token","upid":"UPID:ml350p:00218609:1525FEC7:624E20A2:qmstart:101:TerraformProv@pam!my_token:","type":"qmstart","id":"101","starttime":1649287330,"pid":2197001,"pstart":354811591}}
+[90mThu, 07 Apr 2022 01:22:12 +0200[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1319[0m[36m >[0m Reading configuration for vmid [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+2022/04/07 01:22:12 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:12 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1177
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:12 GMT
+Expires: Wed, 06 Apr 2022 23:22:12 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"mem":869069481,"netout":7333635582,"id":"qemu/100","diskwrite":71509405696,"maxmem":2147483648,"vmid":100,"node":"ml350p","diskread":806958524,"netin":12509819558,"template":0,"name":"pfsense","disk":0,"status":"running","maxcpu":8,"cpu":0.00647999641058203,"type":"qemu","maxdisk":34359738368,"uptime":3413671},{"netout":6845543,"mem":840806400,"diskwrite":286515200,"maxmem":4294967296,"id":"qemu/101","netin":504533,"template":0,"node":"ml350p","diskread":478993180,"vmid":101,"disk":0,"name":"ansible","status":"running","cpu":0.0264090419752022,"maxcpu":8,"maxdisk":34573647872,"type":"qemu","uptime":11810},{"name":"test-vm","disk":0,"status":"running","maxdisk":34573647872,"uptime":19236,"type":"qemu","maxcpu":1,"cpu":0.0361901686326845,"mem":909991936,"netout":726531,"vmid":102,"node":"ml350p","diskread":558783260,"template":0,"netin":12558599,"id":"qemu/102","maxmem":2147483648,"diskwrite":684163072},{"cpu":0,"maxcpu":1,"maxdisk":34573647872,"uptime":0,"type":"qemu","status":"stopped","disk":0,"name":"ubuntu2004","id":"qemu/9000","maxmem":2147483648,"diskwrite":0,"diskread":0,"node":"ml350p","netin":0,"template":1,"vmid":9000,"netout":0,"mem":0}]}
+2022/04/07 01:22:12 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/config HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:12 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1400
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:12 GMT
+Expires: Wed, 06 Apr 2022 23:22:12 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"boot":"c","numa":0,"meta":"creation-qemu=6.1.0,ctime=1645701492","nameserver":"10.0.0.254","ide2":"local-lvm:vm-101-cloudinit,media=cdrom","cpu":"host","sshkeys":"ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ%2FNNo%2BPk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4%2BWmCSQ7XYlYw%2BZ6yV8sZu6ox1SoIYp%2FzvAbiMRqhKavj%2BmJ6i%2FwAx44sPeSxW%2F%2B%2F%2BBl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC%2B6fjSbl%2F2fsyXjPPpBuGZ9wGDIWbLr%2FAHldulkOU%2BmmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1%2BUtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws%2BEr2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf%2FIERuq9iEgTufHL7pWvKR34k%2Bh%2BLjVL%2BKrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr%2BFjnPkyfG5GrE%3D%20marchoogendoorn%40Air-van-marc%0A","cores":4,"cipassword":"**********","vmgenid":"82328727-1755-465e-8e94-92a7c93db9de","name":"ansible","scsi0":"local-lvm:vm-101-disk-0,size=32972M","smbios1":"uuid=4721c9e9-0bc8-465d-8366-63c91b0c2057","searchdomain":"newearth.local","kvm":1,"ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","sockets":2,"agent":"1","net0":"virtio=52:E1:27:70:CF:D7,bridge=vmbr120","ostype":"l26","memory":4096,"hotplug":"network,disk,usb","bios":"seabios","onboot":0,"bootdisk":"scsi0","tablet":1,"scsihw":"virtio-scsi-pci","serial0":"socket","ciuser":"root","digest":"f6fd6e1b8ace7febcf8b8c1704aaf8bfa20c5864"}}
+2022/04/07 01:22:12 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/content HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:12 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:13 GMT
+Expires: Wed, 06 Apr 2022 23:22:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+2022/04/07 01:22:12 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/storage/local-lvm/status HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:12 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 149
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:13 GMT
+Expires: Wed, 06 Apr 2022 23:22:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"shared":0,"enabled":1,"active":1,"type":"lvmthin","avail":346921298717,"total":363306418176,"content":"rootdir,images","used":16385119459}}
+2022/04/07 01:22:12 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/ml350p/qemu/101/status/current HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:12 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1866
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:13 GMT
+Expires: Wed, 06 Apr 2022 23:22:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"running-machine":"pc-i440fx-6.1+pve0","balloon":4294967296,"running-qemu":"6.1.0","blockstat":{"scsi0":{"rd_merged":0,"failed_flush_operations":0,"unmap_operations":0,"rd_operations":0,"invalid_flush_operations":0,"invalid_rd_operations":0,"wr_highest_offset":0,"rd_bytes":0,"wr_bytes":0,"unmap_total_time_ns":0,"invalid_wr_operations":0,"failed_rd_operations":0,"wr_merged":0,"account_failed":true,"unmap_bytes":0,"wr_operations":0,"flush_total_time_ns":0,"failed_wr_operations":0,"invalid_unmap_operations":0,"wr_total_time_ns":0,"unmap_merged":0,"rd_total_time_ns":0,"failed_unmap_operations":0,"flush_operations":0,"account_invalid":true,"timed_stats":[]},"ide2":{"invalid_wr_operations":0,"failed_rd_operations":0,"wr_bytes":0,"unmap_total_time_ns":0,"unmap_bytes":0,"wr_operations":0,"account_failed":true,"wr_merged":0,"invalid_flush_operations":0,"failed_flush_operations":0,"rd_operations":1,"unmap_operations":0,"rd_merged":0,"rd_bytes":2048,"invalid_rd_operations":0,"wr_highest_offset":0,"failed_unmap_operations":0,"flush_operations":0,"rd_total_time_ns":150081,"timed_stats":[],"account_invalid":true,"idle_time_ns":1075165082,"failed_wr_operations":0,"flush_total_time_ns":0,"unmap_merged":0,"wr_total_time_ns":0,"invalid_unmap_operations":0}},"maxdisk":34573647872,"diskwrite":0,"agent":1,"status":"running","proxmox-support":{"pbs-dirty-bitmap-savevm":true,"pbs-library-version":"1.2.0 (6e555bc73a7dcfb4d0b47355b958afd101ad27b5)","pbs-dirty-bitmap":true,"pbs-masterkey":true,"pbs-dirty-bitmap-migration":true,"query-bitmap-info":true},"cpus":8,"vmid":101,"qmpstatus":"running","diskread":2048,"netin":0,"serial":1,"ha":{"managed":0},"pid":2197033,"cpu":0,"uptime":1,"netout":0,"nics":{"tap101i0":{"netin":0,"netout":0}},"mem":32172612,"maxmem":4294967296,"disk":0,"ballooninfo":{"actual":4294967296,"max_mem":4294967296},"name":"ansible"}}
+2022/04/07 01:22:12 [DEBUG] VM status: running
+[90mThu, 07 Apr 2022 01:22:12 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1348[0m[36m >[0m [READ] Received Config from Proxmox API: {"vmid":0,"name":"ansible","desc":"","bios":"seabios","onboot":false,"tablet":true,"agent":1,"memory":4096,"balloon":0,"os":"l26","cores":4,"sockets":2,"vcpus":0,"cpu":"host","numa":false,"kvm":true,"hotplug":"network,disk,usb","iso":"local-lvm:vm-101-cloudinit","pxe":false,"fullclone":null,"boot":"c","bootdisk":"scsi0","scsihw":"virtio-scsi-pci","disk":{"0":{"file":"vm-101-disk-0","format":"","size":"32972M","slot":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-101-disk-0"}},"unused_disk":{},"network":{"0":{"bridge":"vmbr120","id":0,"macaddr":"52:E1:27:70:CF:D7","model":"virtio"}},"serial":{"0":{"id":0,"type":"socket"}},"tags":"","args":"","diskGB":0,"storage":"","storageType":"","nic":"","bridge":"","vlan":-1,"mac":"","ciuser":"root","cipassword":"**********","cicustom":"","searchdomain":"newearth.local","nameserver":"10.0.0.254","sshkeys":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ/NNo+Pk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4+WmCSQ7XYlYw+Z6yV8sZu6ox1SoIYp/zvAbiMRqhKavj+mJ6i/wAx44sPeSxW/+/+Bl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC+6fjSbl/2fsyXjPPpBuGZ9wGDIWbLr/AHldulkOU+mmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1+UtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws+Er2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf/IERuq9iEgTufHL7pWvKR34k+h+LjVL+KrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr+FjnPkyfG5GrE= marchoogendoorn@Air-van-marc\n","ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":""} [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:22:12 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1440[0m[36m >[0m Unused Disk Block Processed 'map[0:map[bridge:vmbr120 id:0 macaddr:52:E1:27:70:CF:D7 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:22:12 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1454[0m[36m >[0m Network block received 'map[0:map[bridge:vmbr120 id:0 macaddr:52:E1:27:70:CF:D7 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+2022/04/07 01:22:12 >>>>>>>>>> REQUEST:
+GET /api2/json/pools HTTP/1.1
+Host: 10.0.0.253:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Authorization: PVEAPIToken=TerraformProv@pam!my_token=782c9089-21d7-4cc9-92e4-f55639dd5bdd
+Accept-Encoding: gzip
+
+2022/04/07 01:22:12 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 11
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Apr 2022 23:22:13 GMT
+Expires: Wed, 06 Apr 2022 23:22:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[]}
+[90mThu, 07 Apr 2022 01:22:12 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1515[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr120 id:0 macaddr:52:E1:27:70:CF:D7 model:virtio tag:-1]]' from '[map[bridge:vmbr120 macaddr:52:E1:27:70:CF:D7 model:virtio tag:-1]]' set as '[map[bridge:vmbr120 firewall:false link_down:false macaddr:52:E1:27:70:CF:D7 model:virtio mtu:0 queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
+[90mThu, 07 Apr 2022 01:22:12 +0200[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1517[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":0,"agent":1,"args":"","automatic_reboot":true,"balloon":0,"bios":"seabios","boot":"c","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"root","clone":"","clone_wait":0,"cloudinit_cdrom_storage":"","cores":4,"cpu":"host","default_ipv4_address":"10.0.0.1","define_connection_info":true,"desc":"","disk":[{"aio":"","backup":0,"cache":"none","discard":"","file":"vm-101-disk-0","format":"","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"32972M","slot":0,"ssd":0,"storage":"local-lvm","storage_type":"lvmthin","type":"scsi","volume":"local-lvm:vm-101-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":false,"guest_agent_ready_timeout":100,"hagroup":"","hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=10.0.0.1/24,gw=10.0.0.254","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","iso":"","kvm":true,"mac":"","memory":4096,"name":"ansible","nameserver":"10.0.0.254","network":[{"bridge":"vmbr120","firewall":false,"link_down":false,"macaddr":"52:E1:27:70:CF:D7","model":"virtio","mtu":0,"queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":false,"oncreate":true,"os_network_config":"","os_type":"","pool":"","preprovision":true,"pxe":false,"qemu_os":"l26","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"newearth.local","serial":[],"sockets":2,"ssh_forward_ip":"","ssh_host":"10.0.0.1","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ/NNo+Pk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4+WmCSQ7XYlYw+Z6yV8sZu6ox1SoIYp/zvAbiMRqhKavj+mJ6i/wAx44sPeSxW/+/+Bl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC+6fjSbl/2fsyXjPPpBuGZ9wGDIWbLr/AHldulkOU+mmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1+UtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws+Er2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf/IERuq9iEgTufHL7pWvKR34k+h+LjVL+KrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr+FjnPkyfG5GrE= marchoogendoorn@Air-van-marc\n","storage":"","storage_type":"","tablet":true,"tags":"","target_node":"ml350p","unused_disk":[],"usb":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":0}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m101
