@@ -36,7 +36,14 @@ provider "proxmox" {
 
 resource "proxmox_vm_qemu" "example" {
     name = "example-vm"
+    agent = 0
     target_node = "ml350p"
     vmid = 999
-    clone = "9000"
+    pxe = true
+    network {
+        bridge      = "vmbr120"
+        firewall    = false
+        link_down   = false
+        model       = "virtio"
+    }
 }
