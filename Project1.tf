@@ -23,16 +23,20 @@ provider "proxmox" {
 
 
 resource "proxmox_vm_qemu" "test_vm" {
-    target_node = "ml350p"
- /*
-    name        = "test-vm"
     
+
+    name        = "test-vm"
+    target_node = "ml350p"
     pool        = "Services"
+    full_clone  = false
 
     // CPU
     sockets = 1
     cores   = 1
     memory  = 2048
+
+    // CLOUD-INIT
+    ipconfig0 = ["ip=10.0.0.0/24","gw=10.0.0.254"]
 
     network {
         bridge      = "vmbr120"
@@ -48,7 +52,7 @@ resource "proxmox_vm_qemu" "test_vm" {
         size            = "32GB"
         backup          = 0
     }
-    */
+    
 }
 
 /*
