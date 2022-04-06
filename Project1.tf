@@ -15,4 +15,5 @@ provider "proxmox" {
 resource "proxmox_vm_qemu" "test-vm" {
     name = "test-vm"
     target_node = "ml350p"
+    vmid = 102
 }
