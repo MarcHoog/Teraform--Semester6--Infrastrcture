@@ -37,6 +37,7 @@ provider "proxmox" {
 resource "proxmox_vm_qemu" "example" {
     name = "example-vm"
     agent = 0
+    boot  = "order=net0;scsi0"
     target_node = "ml350p"
     vmid = 999
     pxe = true
