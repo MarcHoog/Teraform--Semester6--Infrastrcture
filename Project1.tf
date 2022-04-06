@@ -23,6 +23,7 @@ provider "proxmox" {
 
 
 resource "proxmox_vm_qemu" "test_vm" {
+ /*
     name        = "test-vm"
     target_node = "ml350p"
     pool        = "Services"
@@ -45,7 +46,8 @@ resource "proxmox_vm_qemu" "test_vm" {
         storage         = "local-lvm"
         size            = "32GB"
         backup          = 0
-  }
+    }
+    */
 }
 
 /*
