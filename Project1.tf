@@ -29,7 +29,7 @@ resource "proxmox_vm_qemu" "test_vm" {
     name        = "test-vm"
     target_node = "ml350p"
     onboot      = false
-    qemu_os     = "l26"
+    qemu_os     = "Linux 5.x - 2.6 Kernel"
     full_clone  = false
 
     // CPU
