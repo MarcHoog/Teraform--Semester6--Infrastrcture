@@ -36,7 +36,7 @@ resource "proxmox_vm_qemu" "test_vm" {
     memory  = 2048
 
     // CLOUD-INIT
-    ipconfig0 = ["ip=10.0.0.0/24","gw=10.0.0.254"]
+    ipconfig0 = "ip=10.0.0.0/24,gw=10.0.0.254"
 
     network {
         bridge      = "vmbr120"
