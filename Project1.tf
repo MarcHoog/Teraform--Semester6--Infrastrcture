@@ -38,5 +38,5 @@ resource "proxmox_vm_qemu" "example" {
     name = "example-vm"
     target_node = "ml350p"
     vmid = 999
-    clone = "test-vm"
+    clone = "9000"
 }
