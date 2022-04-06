@@ -25,6 +25,7 @@ provider "proxmox" {
 resource "proxmox_vm_qemu" "test_vm" {
 
     name        = "test-vm"
+    agent       = 1
     target_node = "ml350p"
     onboot      = false
     qemu_os     = "l26"
