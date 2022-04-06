@@ -28,7 +28,6 @@ resource "proxmox_vm_qemu" "test_vm" {
 
     name        = "test-vm"
     target_node = "ml350p"
-    pool        = "Services"
     onboot      = false
     qemu_os     = "l26"
     full_clone  = false
