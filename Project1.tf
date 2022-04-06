@@ -13,7 +13,7 @@ provider "proxmox" {
 
 
 resource "proxmox_vm_qemu" "example" {
-    name = "test-vm"
+    name = "goink"
     target_node = "ml350p"
-    vmid = 102
+    vmid = 105
 }
