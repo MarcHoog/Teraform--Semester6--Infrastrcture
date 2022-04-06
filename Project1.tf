@@ -34,6 +34,7 @@ provider "proxmox" {
 #    }
 #}
 
+/*
 resource "proxmox_vm_qemu" "example" {
     name = "example-vm"
     agent = 0
@@ -48,3 +49,4 @@ resource "proxmox_vm_qemu" "example" {
         model       = "virtio"
     }
 }
+*/
