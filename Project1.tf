@@ -13,6 +13,11 @@ provider "proxmox" {
   pm_api_token_secret = "0570085f-9bc0-4e8a-819b-5a9331354cb2"
   pm_debug = true
   pm_tls_insecure = true
+  pm_log_enable = true
+  pm_log_file   = "terraform-plugin-proxmox.log"
+  pm_log_levels = {
+    _default    = "debug"
+    _capturelog = ""
 }
 
 #
