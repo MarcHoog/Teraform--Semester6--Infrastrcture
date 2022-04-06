@@ -43,7 +43,6 @@ resource "proxmox_vm_qemu" "test_vm" {
     //    id              = 0
         type            = "scsi"
         storage         = "local-lvm"
-        storage_type    = "lvm"
         size            = "32GB"
         backup          = 0
   }
