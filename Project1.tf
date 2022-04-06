@@ -23,15 +23,30 @@ provider "proxmox" {
 
 
 resource "proxmox_vm_qemu" "test_vm" {
-    name = "test-vm"
-    target_node     = "ml350p"
-    vmid            = 102
+    name        = "test-vm"
+    target_node = "ml350p"
+    pool        = "Services"
+
+    // CPU
+    sockets = 1
+    cores   = 1
+    memory  = 2048
+
     network {
-       bridge      = "vmbr120"
+        bridge      = "vmbr120"
         firewall    = false
         link_down   = false
         model       = "virtio"
     }
+
+    disk {
+        id              = 0
+        type            = "scsi"
+        storage         = "local-lvm"
+        storage_type    = "lvm"
+        size            = "32GB"
+        backup          = false
+  }
 }
 
 /*
