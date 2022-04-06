@@ -13,15 +13,20 @@ provider "proxmox" {
   pm_api_token_secret = "0570085f-9bc0-4e8a-819b-5a9331354cb2"
 }
 
+#
+#resource "proxmox_vm_qemu" "test_vm" {
+#    name = "test-vm"
+#    target_node     = "ml350p"
+#    vmid            = 102
+#    network {
+#        bridge      = "vmbr120"
+#        firewall    = false
+#        link_down   = false
+#        model       = "virtio"
+#    }
+#}
 
-resource "proxmox_vm_qemu" "test_vm" {
-    name = "test-vm"
-    target_node     = "ml350p"
-    vmid            = 102
-    network {
-        bridge      = "vmbr120"
-        firewall    = false
-        link_down   = false
-        model       = "virtio"
-    }
+resource "proxmox_vm_qemu" "example"{
+    name = "example-vm"
+    target_node = "ml350p"
 }
