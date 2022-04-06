@@ -33,14 +33,11 @@ resource "proxmox_vm_qemu" "test_vm" {
     qemu_os     = "l26"
     full_clone  = false
 
-
-
-
     // CPU
     sockets = 1
     cores   = 1
     memory  = 2048
-
+    
     // CLOUD-INIT
     ipconfig0   = "ip=10.0.0.200/24,gw=10.0.0.254"
     ciuser      = "ansible-op"
