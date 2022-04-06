@@ -12,7 +12,7 @@ provider "proxmox" {
 }
 
 
-resource "proxmox_vm_qemu" "test-vm" {
+resource "proxmox_vm_qemu" "example" {
     name = "test-vm"
     target_node = "ml350p"
     vmid = 102
