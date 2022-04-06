@@ -21,6 +21,77 @@ provider "proxmox" {
   }
 }
 
+resource "proxmox_vm_qemu" "ansible" {
+    name        = "ansible"
+    agent       = 1
+    target_node = "ml350p"
+    onboot      = false
+    qemu_os     = "l26"
+    full_clone  = false
+
+    // CPU
+    sockets = 2
+    cores   = 4
+    memory  = 4096
+    
+    // CLOUD-INIT
+    ipconfig0   = "ip=10.0.0.1/24,gw=10.0.0.254"
+    ciuser      = "root"
+    sshkeys     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ/NNo+Pk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4+WmCSQ7XYlYw+Z6yV8sZu6ox1SoIYp/zvAbiMRqhKavj+mJ6i/wAx44sPeSxW/+/+Bl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC+6fjSbl/2fsyXjPPpBuGZ9wGDIWbLr/AHldulkOU+mmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1+UtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws+Er2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf/IERuq9iEgTufHL7pWvKR34k+h+LjVL+KrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr+FjnPkyfG5GrE= marchoogendoorn@AHoogendoorn"
+
+
+    network {
+        bridge      = "vmbr120"
+        firewall    = false
+        link_down   = false
+        model       = "virtio"
+    }
+
+    disk {
+    //    id              = 0
+        type            = "scsi"
+        storage         = "local-lvm"
+        size            = "32972M"
+        backup          = 0
+    }
+    
+}
+
+resource "proxmox_vm_qemu" "terraform" {
+
+    name        = "terraform"
+    agent       = 1
+    target_node = "ml350p"
+    onboot      = false
+    qemu_os     = "l26"
+    full_clone  = false
+
+    // CPU
+    sockets = 4
+    cores   = 1
+    memory  = 2048
+    
+    // CLOUD-INIT
+    ipconfig0   = "ip=10.0.0.2/24,gw=10.0.0.254"
+    ciuser      = "ansible-op"
+    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
+
+    network {
+        bridge      = "vmbr120"
+        firewall    = false
+        link_down   = false
+        model       = "virtio"
+    }
+
+    disk {
+    //    id              = 0
+        type            = "scsi"
+        storage         = "local-lvm"
+        size            = "32972M"
+        backup          = 0
+    }
+    
+}
 
 resource "proxmox_vm_qemu" "test_vm" {
 
@@ -57,6 +128,10 @@ resource "proxmox_vm_qemu" "test_vm" {
     }
     
 }
+
+
+
+
 
 /*
 resource "proxmox_vm_qemu" "example" {
