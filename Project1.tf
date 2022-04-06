@@ -12,8 +12,15 @@ provider "proxmox" {
 }
 
 
-resource "proxmox_vm_qemu" "example" {
-    name = "goink"
-    target_node = "ml350p"
-    vmid = 105
+resource "proxmox_vm_qemu" "test_vm" {
+    name = "test-vm"
+    target_node     = "ml350p"
+    vmid            = 102
+    network {
+        bridge      = "vmbr120"
+        firewall    = false
+        link_down   = false
+        model       = "virtio"
+
+    }
 }
