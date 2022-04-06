@@ -23,9 +23,10 @@ provider "proxmox" {
 
 
 resource "proxmox_vm_qemu" "test_vm" {
+    target_node = "ml350p"
  /*
     name        = "test-vm"
-    target_node = "ml350p"
+    
     pool        = "Services"
 
     // CPU
