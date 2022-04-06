@@ -12,7 +12,7 @@ provider "proxmox" {
 }
 
 
-recourse "proxmox_vm_qemu" "test-vm" {
+resource "proxmox_vm_qemu" "test-vm" {
     name        = test-vm
     target_node = ml350p
 }
