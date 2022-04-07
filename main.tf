@@ -95,7 +95,7 @@ resource "proxmox_vm_qemu" "test-vm" {
 
 resource "proxmox_vm_qemu" "kube-master" {
     name = "kube-master00"
-    agent = 0
+    agent = 1
 
     sockets = 1
     cores   = 8
