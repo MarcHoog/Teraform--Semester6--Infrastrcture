@@ -105,7 +105,7 @@ resource "proxmox_vm_qemu" "kube-master" {
     onboot      = false
     qemu_os     = "l26"
     full_clone  = false
-    clone       = "ubuntu2004"
+    clone       = "SRV-Ubuntu-Focal"
 
     // Cloud-init
     ipconfig0   = "ip=10.8.0.1/24,gw=10.8.0.254"
@@ -114,6 +114,7 @@ resource "proxmox_vm_qemu" "kube-master" {
     nameserver  = "10.8.0.254"
 
     network {
+    // IP config 0
       bridge    = "vmbr150"
       firewall  = false
       link_down = false
@@ -122,15 +123,89 @@ resource "proxmox_vm_qemu" "kube-master" {
     }
 
     disk {
-    //    id              = 0
+    // ID 0
         type            = "scsi"
         storage         = "local-lvm"
-        size            = "50G"
+        size            = "50380M"
         backup          = 0
     }
 }
 
+resource "proxmox_vm_qemu" "kube-worker01" {
+    name = "kube-worker01"
+    agent = 1
 
+    sockets = 2
+    cores   = 4
+    memory  = 16384
+
+    target_node = "ml350p"
+    onboot      = false
+    qemu_os     = "l26"
+    full_clone  = false
+    clone       = "SRV-Ubuntu-Focal"
+
+    // Cloud-init
+    ipconfig0   = "ip=10.8.0.2/24,gw=10.8.0.254"
+    ciuser      = "ansible-op"
+    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
+    nameserver  = "10.8.0.254"
+
+    network {
+    // IP config 0
+      bridge    = "vmbr150"
+      firewall  = false
+      link_down = false
+      model     = "virtio"
+    
+    }
+
+    disk {
+    // ID 0
+        type            = "scsi"
+        storage         = "local-lvm"
+        size            = "30720M"
+        backup          = 0
+    }
+}
+
+resource "proxmox_vm_qemu" "kube-worker02" {
+    name = "kube-worker02"
+    agent = 1
+
+    sockets = 2
+    cores   = 4
+    memory  = 16384
+
+    target_node = "ml350p"
+    onboot      = false
+    qemu_os     = "l26"
+    full_clone  = false
+    clone       = "SRV-Ubuntu-Focal"
+
+    // Cloud-init
+    ipconfig0   = "ip=10.8.0.3/24,gw=10.8.0.254"
+    ciuser      = "ansible-op"
+    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
+    nameserver  = "10.8.0.254"
+
+    network {
+    // IP config 0
+      bridge    = "vmbr150"
+      firewall  = false
+      link_down = false
+      model     = "virtio"
+    
+    }
+
+    disk {
+    // ID 0
+        type            = "scsi"
+        storage         = "local-lvm"
+        size            = "30720M"
+        backup          = 0
+    }
+}
 
 
 
