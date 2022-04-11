@@ -93,6 +93,7 @@ resource "proxmox_vm_qemu" "test-vm" {
     
 }
 
+
 resource "proxmox_vm_qemu" "kube-master" {
     name = "kube-master00"
     agent = 1
