@@ -93,6 +93,7 @@ resource "proxmox_vm_qemu" "test-vm" {
     
 }
 
+
 resource "proxmox_vm_qemu" "kube-master" {
     name = "kube-master00"
     agent = 1
@@ -207,13 +208,12 @@ resource "proxmox_vm_qemu" "kube-worker02" {
     }
 }
 
-/*
-resource "proxmox_vm_qemu" "storage" {
-    name = "storage-server"
+resource "proxmox_vm_qemu" "kube-nfs" {
+    name = "kube-nfs"
     agent = 1
 
-    sockets = 2
-    cores   = 8
+    sockets = 1
+    cores   = 16
     memory  = 8192
 
     target_node = "ml350p"
@@ -240,14 +240,13 @@ resource "proxmox_vm_qemu" "storage" {
     disk {
     // ID 0
         type            = "scsi"
-        storage         = "local-lvm"
-        size            = "200G"
+        storage         = "pve-data2"
+        size            = "400G"
         backup          = 0
     }
-
     
 }
-*/
+
 
 /*
 resource "proxmox_vm_qemu" "example" {
