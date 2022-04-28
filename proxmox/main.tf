@@ -10,7 +10,7 @@ terraform {
 provider "proxmox" {
   pm_api_url = "https://10.0.0.253:8006/api2/json"
   pm_api_token_id = "TerraformProv@pam!my_token"
-  pm_api_token_secret = "782c9089-21d7-4cc9-92e4-f55639dd5bdd"
+  pm_api_token_secret = "782c9089-21d7-4cc9-92e4-f55639dd5bdd" # THIS is in a local closed of test environment
   pm_debug = true
   pm_tls_insecure = true
   pm_log_enable = true
@@ -216,7 +216,7 @@ resource "proxmox_vm_qemu" "kube-worker04" {
     agent = 1
 
     sockets = 2
-    cores   = 4
+    cores   = 4+-
     memory  = 16384
 
     target_node = "ml350p"
