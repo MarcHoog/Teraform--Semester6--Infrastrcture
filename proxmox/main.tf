@@ -2,7 +2,7 @@ terraform {
   required_providers {
     proxmox = {
       source  = "telmate/proxmox"
-      version = "2.9.6"
+      version = "2.9.10"
     }
   }
 }
@@ -58,7 +58,144 @@ resource "proxmox_vm_qemu" "ansible" {
 }
 
 
+resource "proxmox_vm_qemu" "kea" {
+    name = "kea"
+    agent = 1
+
+    sockets = 1
+    cores   = 2
+    memory  = 4096
+
+    target_node = "ml350p"
+    onboot      = false
+    qemu_os     = "l26"
+    full_clone  = false
+    clone       = "SRV-Ubuntu-Focal"
+
+    // Cloud-init
+    ipconfig0   = "ip=10.0.0.200/24,gw=10.0.0.254"
+    ipconfig1   = "ip=10.8.0.200/24"
+    ipconfig2   = "ip=10.254.0.1/24"
+    ciuser      = "ansible-op"
+    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
+    nameserver  = "10.0.0.254"
+
+    network {
+    // IP config 0
+      bridge    = "vmbr120"
+      firewall  = false
+      link_down = false
+      model     = "virtio"
+      macaddr   = "0A:7A:F5:26:61:61"
+    }
+
+    network {
+    // IP config 1
+      bridge    = "vmbr150"
+      firewall  = false
+      link_down = false
+      model     = "virtio"
+      macaddr   = "E6:AF:31:E9:D3:B0"
+    }
+
+
+    network {
+    // IP config 2
+      bridge = "vmbr140"
+      firewall = false
+      link_down = false
+      model = "virtio"
+      macaddr = "46:D0:30:D1:D3:55"
+    }
+
+    disk {
+    // ID 0
+        type            = "scsi"
+        storage         = "local-lvm"
+        size            = "32972M"
+        backup          = 0
+    }
+}
+
+resource "proxmox_vm_qemu" "microk8s" {
+    name = "microk8s"
+    agent = 1
+
+    sockets = 1
+    cores   = 16
+    memory  = 16384
+
+    target_node = "ml350p"
+    onboot      = false
+    qemu_os     = "l26"
+    full_clone  = false
+    clone       = "SRV-Ubuntu-Focal-pved2"
+
+    // Cloud-init
+    ipconfig0   = "ip=10.0.0.2/24,gw=10.0.0.254"
+    ciuser      = "ansible-op"
+    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
+    nameserver  = ""
+
+    network {
+    // IP config 0
+      bridge    = "vmbr120"
+      firewall  = false
+      link_down = false
+      model     = "virtio"
+    
+    }
+
+    disk {
+    // ID 0
+        type            = "scsi"
+        storage         = "pve-data2"
+        size            = "408780M"
+        backup          = 0
+    }
+}
+
 /*
+resource "proxmox_vm_qemu" "testing-rig" {
+    name = "testing-rig00"
+    agent = 1
+
+    sockets = 1
+    cores   = 8
+    memory  = 16384
+
+    target_node = "ml350p"
+    onboot      = false
+    qemu_os     = "l26"
+    full_clone  = false
+    clone       = "SRV-Ubuntu-Focal"
+
+    // Cloud-init
+    ciuser      = "ansible-op"
+    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
+
+    network {
+    // IP config 0
+      bridge    = "vmbr140"
+      firewall  = false
+      link_down = false
+      model     = "virtio"
+    
+    }
+
+    disk {
+    // ID 0
+        type            = "scsi"
+        storage         = "local-lvm"
+        size            = "50380M"
+        backup          = 0
+    }
+}
+
+
+
+
+
 resource "proxmox_vm_qemu" "kube-master" {
     name = "kube-master00"
     agent = 1
@@ -216,7 +353,7 @@ resource "proxmox_vm_qemu" "kube-worker04" {
     agent = 1
 
     sockets = 2
-    cores   = 4+-
+    cores   = 4
     memory  = 16384
 
     target_node = "ml350p"
@@ -248,7 +385,7 @@ resource "proxmox_vm_qemu" "kube-worker04" {
         backup          = 0
     }
 }
-*/
+
 
 resource "proxmox_vm_qemu" "kube-nfs" {
     name = "kube-nfs"
@@ -291,98 +428,6 @@ resource "proxmox_vm_qemu" "kube-nfs" {
     
 }
 
-/*
-resource "proxmox_vm_qemu" "kube-nfs-test" {
-    name = "kube-nfs-test"
-    agent = 1
 
-    sockets = 1
-    cores   = 16
-    memory  = 8192
-
-    target_node = "ml350p"
-    onboot      = false
-    qemu_os     = "l26"
-    full_clone  = false
-    clone       = "SRV-Ubuntu-Focal"
-
-    // Cloud-init
-    ipconfig0   = "ip=10.8.0.252/24,gw=10.8.0.254"
-    ciuser      = "ansible-op"
-    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-    nameserver  = "10.8.0.254"
-
-    network {
-    // IP config 0
-      bridge    = "vmbr150"
-      firewall  = false
-      link_down = false
-      model     = "virtio"
-    
-    }
-
-    disk {
-    // ID 0
-        type            = "scsi"
-        storage         = "pve-data2"
-        size            = "408780M"
-        backup          = 0
-    }
-    
-}
 */
 
-resource "proxmox_vm_qemu" "microk8s" {
-    name = "microk8s"
-    agent = 1
-
-    sockets = 1
-    cores   = 16
-    memory  = 16384
-
-    target_node = "ml350p"
-    onboot      = false
-    qemu_os     = "l26"
-    full_clone  = false
-    clone       = "SRV-Ubuntu-Focal-pved2"
-
-    // Cloud-init
-    ipconfig0   = "ip=10.0.0.2/24,gw=10.0.0.254"
-    ciuser      = "ansible-op"
-    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-    nameserver  = "10.0.0.254"
-
-    network {
-    // IP config 0
-      bridge    = "vmbr120"
-      firewall  = false
-      link_down = false
-      model     = "virtio"
-    
-    }
-
-    disk {
-    // ID 0
-        type            = "scsi"
-        storage         = "pve-data2"
-        size            = "408780M"
-        backup          = 0
-    }
-}
-
-/*
-resource "proxmox_vm_qemu" "example" {
-    name = "example-vm"
-    agent = 0
-    boot  = "order=net0;scsi0"
-    target_node = "ml350p"
-    vmid = 999
-    pxe = true
-    network {
-        bridge      = "vmbr120"
-        firewall    = false
-        link_down   = false
-        model       = "virtio"
-    }
-}
-*/
