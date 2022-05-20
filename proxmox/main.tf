@@ -118,43 +118,6 @@ resource "proxmox_vm_qemu" "kea" {
     }
 }
 
-
-resource "proxmox_vm_qemu" "testing-rig1" {
-    name = "jan"
-    agent = 1
-
-    sockets = 1
-    cores   = 8
-    memory  = 16384
-
-    target_node = "ml350p"
-    onboot      = false
-    qemu_os     = "l26"
-    full_clone  = false
-    clone       = "SRV-Ubuntu-Focal"
-
-    // Cloud-init
-    ciuser      = "ansible-op"
-    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-
-    network {
-    // IP config 0
-      bridge    = "vmbr140"
-      firewall  = false
-      link_down = false
-      model     = "virtio"
-    
-    }
-
-    disk {
-    // ID 0
-        type            = "scsi"
-        storage         = "local-lvm"
-        size            = "50380M"
-        backup          = 0
-    }
-}
-
 resource "proxmox_vm_qemu" "ns1" {
     name = "ns1"
     agent = 1
@@ -232,7 +195,7 @@ resource "proxmox_vm_qemu" "microk8s" {
     }
 }
 
-
+/*
 resource "proxmox_vm_qemu" "kube-master00" {
     name = "kube-master00"
     agent = 1
@@ -304,6 +267,7 @@ resource "proxmox_vm_qemu" "kube-worker01" {
         backup          = 0
     }
 }
+
 
 resource "proxmox_vm_qemu" "kube-worker02" {
     name = "kube-worker02"
@@ -413,7 +377,6 @@ resource "proxmox_vm_qemu" "kube-worker04" {
     }
 }
 
-
 resource "proxmox_vm_qemu" "kube-nfs" {
     name = "kube-nfs"
     agent = 1
@@ -452,3 +415,4 @@ resource "proxmox_vm_qemu" "kube-nfs" {
     }
     
 }
+*/
