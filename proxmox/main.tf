@@ -35,10 +35,10 @@ resource "proxmox_vm_qemu" "ansible" {
     memory  = 4096
     
     // CLOUD-INIT
-    ipconfig0   = "ip=10.0.0.1/24,gw=10.0.0.254"
+    ipconfig0   = "ip=10.0.0.2/24,gw=10.0.0.254"
     ciuser      = "root"
     sshkeys     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9PdGQSxLdItzCZ/NNo+Pk2Hut7YKTaJiOvnPpJT0Td5CW3JrggnNJYF4+WmCSQ7XYlYw+Z6yV8sZu6ox1SoIYp/zvAbiMRqhKavj+mJ6i/wAx44sPeSxW/+/+Bl3aW66OsxGkX7JhmjzmuftQ7XAxOBYJNp8r1RTKKMq2jS7tvHevyC+6fjSbl/2fsyXjPPpBuGZ9wGDIWbLr/AHldulkOU+mmyxYyeW2EuBgGEB4qaybEf6aPkYP77pMMpbYnncqWzO02pn9IiE1+UtFMDDgwRw1aNV8RhfE5GRB9TA1poP27tfwvPq51w8MfKfAVFIPhuw6oNNOD2HWUyz3JkjAltSEjjUA4a3M3NFbWqIiY5tHws+Er2s0lsQSZwUrPJ2d0bXrTBJqLrc91R2CCKmou0Lki3gAeGHjABLNeJvaIf/IERuq9iEgTufHL7pWvKR34k+h+LjVL+KrUfW5WklfY9xkECUTp44wyInhc9RfZ2hsTkbkGr+FjnPkyfG5GrE= marchoogendoorn@Air-van-marc"
-
+    searchdomain = "lab.mylocal"
 
     network {
         bridge      = "vmbr120"
@@ -57,6 +57,7 @@ resource "proxmox_vm_qemu" "ansible" {
     
 }
 
+
 resource "proxmox_vm_qemu" "kea" {
     name = "kea"
     agent = 1
@@ -72,12 +73,13 @@ resource "proxmox_vm_qemu" "kea" {
     clone       = "SRV-Ubuntu-Focal"
 
     // Cloud-init
-    ipconfig0   = "ip=10.0.0.200/24,gw=10.0.0.254"
-    ipconfig1   = "ip=10.8.0.200/24"
-    ipconfig2   = "ip=10.254.0.1/24"
+    ipconfig0   = "ip=10.0.0.252/24,gw=10.0.0.254"
+    ipconfig1   = "ip=10.8.0.252/24"
+    ipconfig2   = "ip=10.254.0.252/24"
     ciuser      = "ansible-op"
     sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-    nameserver  = "10.0.0.254"
+    nameserver  = "10.0.0.1"
+    searchdomain = "lab.mylocal"
 
     network {
     // IP config 0
@@ -117,6 +119,42 @@ resource "proxmox_vm_qemu" "kea" {
 }
 
 
+resource "proxmox_vm_qemu" "testing-rig1" {
+    name = "jan"
+    agent = 1
+
+    sockets = 1
+    cores   = 8
+    memory  = 16384
+
+    target_node = "ml350p"
+    onboot      = false
+    qemu_os     = "l26"
+    full_clone  = false
+    clone       = "SRV-Ubuntu-Focal"
+
+    // Cloud-init
+    ciuser      = "ansible-op"
+    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
+
+    network {
+    // IP config 0
+      bridge    = "vmbr140"
+      firewall  = false
+      link_down = false
+      model     = "virtio"
+    
+    }
+
+    disk {
+    // ID 0
+        type            = "scsi"
+        storage         = "local-lvm"
+        size            = "50380M"
+        backup          = 0
+    }
+}
+
 resource "proxmox_vm_qemu" "ns1" {
     name = "ns1"
     agent = 1
@@ -132,10 +170,11 @@ resource "proxmox_vm_qemu" "ns1" {
     clone       = "SRV-Ubuntu-Focal"
 
     // Cloud-init
-    ipconfig0   = "ip=10.0.0.3/24,gw=10.0.0.254"
+    ipconfig0   = "ip=10.0.0.1/24,gw=10.0.0.254"
     ciuser      = "ansible-op"
     sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-    nameserver  = "10.0.0.254"
+    nameserver  = "10.0.0.1"
+    searchdomain = "lab.mylocal"
 
     network {
     // IP config 0
@@ -154,42 +193,6 @@ resource "proxmox_vm_qemu" "ns1" {
     }
 }
 
-resource "proxmox_vm_qemu" "ns2" {
-    name = "ns2"
-    agent = 1
-
-    sockets = 1
-    cores   = 2
-    memory  = 4096
-
-    target_node = "ml350p"
-    onboot      = false
-    qemu_os     = "l26"
-    full_clone  = false
-    clone       = "SRV-Ubuntu-Focal"
-
-    // Cloud-init
-    ipconfig0   = "ip=10.0.0.4/24,gw=10.0.0.254"
-    ciuser      = "ansible-op"
-    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-    nameserver  = "10.0.0.254"
-
-    network {
-    // IP config 0
-      bridge    = "vmbr120"
-      firewall  = false
-      link_down = false
-      model     = "virtio"
-    }
-
-    disk {
-    // ID 0
-        type            = "scsi"
-        storage         = "local-lvm"
-        size            = "32972M"
-        backup          = 0
-    }
-}
 
 resource "proxmox_vm_qemu" "microk8s" {
     name = "microk8s"
@@ -229,43 +232,8 @@ resource "proxmox_vm_qemu" "microk8s" {
     }
 }
 
-resource "proxmox_vm_qemu" "testing-rig" {
-    name = "testing-rig00"
-    agent = 1
 
-    sockets = 1
-    cores   = 8
-    memory  = 16384
-
-    target_node = "ml350p"
-    onboot      = false
-    qemu_os     = "l26"
-    full_clone  = false
-    clone       = "SRV-Ubuntu-Focal"
-
-    // Cloud-init
-    ciuser      = "ansible-op"
-    sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-
-    network {
-    // IP config 0
-      bridge    = "vmbr140"
-      firewall  = false
-      link_down = false
-      model     = "virtio"
-    
-    }
-
-    disk {
-    // ID 0
-        type            = "scsi"
-        storage         = "local-lvm"
-        size            = "50380M"
-        backup          = 0
-    }
-}
-/*
-resource "proxmox_vm_qemu" "kube-master" {
+resource "proxmox_vm_qemu" "kube-master00" {
     name = "kube-master00"
     agent = 1
 
@@ -280,10 +248,8 @@ resource "proxmox_vm_qemu" "kube-master" {
     clone       = "SRV-Ubuntu-Focal"
 
     // Cloud-init
-    ipconfig0   = "ip=10.8.0.1/24,gw=10.8.0.254"
     ciuser      = "ansible-op"
     sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-    nameserver  = "10.8.0.254"
 
     network {
     // IP config 0
@@ -318,10 +284,8 @@ resource "proxmox_vm_qemu" "kube-worker01" {
     clone       = "SRV-Ubuntu-Focal"
 
     // Cloud-init
-    ipconfig0   = "ip=10.8.0.2/24,gw=10.8.0.254"
     ciuser      = "ansible-op"
     sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-    nameserver  = "10.8.0.254"
 
     network {
     // IP config 0
@@ -356,10 +320,8 @@ resource "proxmox_vm_qemu" "kube-worker02" {
     clone       = "SRV-Ubuntu-Focal"
 
     // Cloud-init
-    ipconfig0   = "ip=10.8.0.3/24,gw=10.8.0.254"
     ciuser      = "ansible-op"
     sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-    nameserver  = "10.8.0.254"
 
     network {
     // IP config 0
@@ -394,10 +356,8 @@ resource "proxmox_vm_qemu" "kube-worker03" {
     clone       = "SRV-Ubuntu-Focal"
 
     // Cloud-init
-    ipconfig0   = "ip=10.8.0.4/24,gw=10.8.0.254"
     ciuser      = "ansible-op"
     sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-    nameserver  = "10.8.0.254"
 
     network {
     // IP config 0
@@ -432,10 +392,8 @@ resource "proxmox_vm_qemu" "kube-worker04" {
     clone       = "SRV-Ubuntu-Focal"
 
     // Cloud-init
-    ipconfig0   = "ip=10.8.0.5/24,gw=10.8.0.254"
     ciuser      = "ansible-op"
     sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-    nameserver  = "10.8.0.254"
 
     network {
     // IP config 0
@@ -471,10 +429,8 @@ resource "proxmox_vm_qemu" "kube-nfs" {
     clone       = "SRV-Ubuntu-Focal-pved2"
 
     // Cloud-init
-    ipconfig0   = "ip=10.8.0.253/24,gw=10.8.0.254"
     ciuser      = "ansible-op"
     sshkeys     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDpEHNtySuF99P5t8RTO1TfZ4l3FynFErTqJQC6lM2TV ansible-op@ansible-server"
-    nameserver  = "10.8.0.254"
 
     network {
     // IP config 0
@@ -496,4 +452,3 @@ resource "proxmox_vm_qemu" "kube-nfs" {
     }
     
 }
-*/
